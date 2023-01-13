@@ -11,17 +11,15 @@ public class SaveLoad : MonoBehaviour
 {
     [SerializeField]
     string name;
-    //string strength;
-    //string dexterity;
-    //string defence;
-    //string health;
-    //string speed;
+    int score;
 
     [SerializeField]
     GameObject nameField;
+    GameObject scoreCounter;
 
     [SerializeField]
-    TextMeshProUGUI myText;
+    TextMeshProUGUI myText, scoreText, highScoreText;
+    
 
 
     string filePath = "SaveData";
@@ -32,8 +30,20 @@ public class SaveLoad : MonoBehaviour
     private void Start()
     {
         myText = nameField.GetComponentInChildren<TextMeshProUGUI>();
+        highScoreText = scoreCounter.GetComponent<TextMeshProUGUI>();
         LoadInfo();
         myText.text = myContainer.name;
+        highScoreText.text = "High Score: " + myContainer.score.ToString();
+    }
+
+    private void Update()
+    {
+        /*
+        if (nameField == "")
+        {
+            GetComponent<ClickCounter>().Button.SetActive = false;
+        }
+        */
     }
 
     public void ChangeName(string newName)
@@ -41,37 +51,21 @@ public class SaveLoad : MonoBehaviour
         name = newName;
         SaveInfo();
     }
-    /*
-    public void ChangeStrength(string newStrength)
+    public void SaveScore(int newScore)
     {
-        strength = newStrength;
+        score = newScore;
+        if (newScore >= score)
+        {
+            SaveInfo();
+        }
+        
     }
-    public void ChangeDexterity(string newDexterity)
-    {
-        dexterity = newDexterity;
-    }
-    public void ChangeDefence(string newDefence)
-    {
-        defence = newDefence;
-    }
-    public void ChangeHealth(string newHealth)
-    {
-        health = newHealth;
-    }
-    public void ChangeSpeed(string newSpeed)
-    {
-        speed = newSpeed;
-    }
-    */
+
 
     public void SaveInfo()
     {
         myContainer.name = name;
-        //myContainer.strength = strength;
-        //myContainer.dexterity = dexterity;
-        //myContainer.defence = defence;
-        //myContainer.health = health;
-        //myContainer.speed = speed;
+        myContainer.score = score;
 
         if(!Directory.Exists(filePath))
         {
@@ -100,9 +94,5 @@ public class SaveLoad : MonoBehaviour
 public class SaveContainer
 {
     public string name;
-    //public string strength; 
-    //public string dexterity;
-    //public string defence;
-    //public string health;
-    //public string speed;
+    public int score; 
 }
