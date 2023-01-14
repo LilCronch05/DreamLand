@@ -11,7 +11,9 @@ public class ClickCounter : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI labelText;
+    public TextMeshProUGUI timerText;
     public int score;
+    public int timer = 10;
 
     public GameObject Button;
 
@@ -37,6 +39,22 @@ public class ClickCounter : MonoBehaviour
                 score += 1;
                 scoreText.text = "Your Score: " + score.ToString();
             }
+
+            StartCoroutine(Timer());
+
+            if (timer <= 0)
+            {
+                labelText.text = "Done";
+                timerText.text = "0";
+                Button.SetActive(true);
+                gameStarted = false;
+            }
+        }
+        else
+        {
+            scoreText.text = "Your Score: 0";
+            timerText.text = "10";
+            score = 0; //score is unable to grow if game is not started
         }
     }
 
@@ -47,10 +65,15 @@ public class ClickCounter : MonoBehaviour
             gameStarted = true;
         }
     }
-    /*
-    IEnumerable StartGameTimer()
+    
+    // Enumerator for the timer
+    IEnumerator Timer()
     {
-        
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(10);
+            timerText.text = timer.ToString();
+            timer -= 1;
+        }
     }
-    */
 }
