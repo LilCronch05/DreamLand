@@ -29,6 +29,8 @@ public class SaveLoad : MonoBehaviour
 
     private void Start()
     {
+        scoreText = GetComponent<ClickCounter>().scoreText;
+
         myText = nameField.GetComponentInChildren<TextMeshProUGUI>();
         highScoreText = scoreCounter.GetComponent<TextMeshProUGUI>();
         LoadInfo();
@@ -38,12 +40,7 @@ public class SaveLoad : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (nameField == "")
-        {
-            GetComponent<ClickCounter>().Button.SetActive = false;
-        }
-        */
+
     }
 
     public void ChangeName(string newName)

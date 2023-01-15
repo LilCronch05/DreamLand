@@ -15,65 +15,56 @@ public class ClickCounter : MonoBehaviour
     public int score;
     public int timer = 10;
 
-    public GameObject Button;
+    public GameObject startButton;
+    public GameObject scoreButton;
 
     // Start is called before the first frame update
     void Start()
     {
         gameStarted = false;
+        //timerText.text = timer.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartGame();
-
         if(gameStarted)
         {
-            Button.SetActive(false);
+            startButton.SetActive(false);
+            scoreButton.SetActive(true);
 
             labelText.text = "GO";
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                score += 1;
-                scoreText.text = "Your Score: " + score.ToString();
-            }
-
             StartCoroutine(Timer());
-
             if (timer <= 0)
             {
                 labelText.text = "Done";
-                timerText.text = "0";
-                Button.SetActive(true);
                 gameStarted = false;
+                scoreButton.SetActive(false);
             }
         }
         else
         {
-            scoreText.text = "Your Score: 0";
-            timerText.text = "10";
-            score = 0; //score is unable to grow if game is not started
+            startButton.SetActive(true);
+            scoreButton.SetActive(false);
         }
+    }
+
+    public void AddScore()
+    {
+        score += 1;
+        scoreText.text = "Your Score: " + score.ToString();
     }
 
     public void StartGame()
     {
-        if (!gameStarted && Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            gameStarted = true;
-        }
+        gameStarted = true;
     }
     
     // Enumerator for the timer
     IEnumerator Timer()
     {
-        while (timer > 0)
-        {
-            yield return new WaitForSeconds(10);
-            timerText.text = timer.ToString();
-            timer -= 1;
-        }
+        yield return new WaitForSeconds(10);
+        timer -= 1;
     }
 }
