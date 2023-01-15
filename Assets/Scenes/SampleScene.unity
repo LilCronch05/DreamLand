@@ -207,8 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
-        m_TargetAssemblyTypeName: ClickCounter, Assembly-CSharp
+      - m_Target: {fileID: 845496423}
+        m_TargetAssemblyTypeName: SaveLoad, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -1182,12 +1182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1247,11 +1247,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad1d724ec1f29a48948803bd9100ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStarted: 0
+  labelText: {fileID: 830565455}
+  timerText: {fileID: 934617416}
+  startButton: {fileID: 86379812}
+  scoreButton: {fileID: 1390591742}
   name: 
   nameField: {fileID: 183454140}
   myText: {fileID: 0}
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
+  scoreText: {fileID: 1708964594}
+  highScoreText: {fileID: 351075223}
 --- !u!114 &845496424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,17 +1266,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 845496418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11cac25d4b7873f448b30c1c586ebfcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c9508b119e020a4ea087fbc28d3d50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
-  scoreText: {fileID: 1708964594}
-  labelText: {fileID: 830565455}
-  timerText: {fileID: 934617416}
-  score: 0
-  timer: 10
-  startButton: {fileID: 86379812}
-  scoreButton: {fileID: 1390591742}
 --- !u!1 &934617414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,8 +1910,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
-        m_TargetAssemblyTypeName: ClickCounter, Assembly-CSharp
+      - m_Target: {fileID: 845496423}
+        m_TargetAssemblyTypeName: SaveLoad, Assembly-CSharp
         m_MethodName: AddScore
         m_Mode: 1
         m_Arguments:
