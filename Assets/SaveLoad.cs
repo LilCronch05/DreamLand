@@ -9,25 +9,20 @@ using TMPro;
 
 public class SaveLoad : MonoBehaviour
 {
-    //CLick Counter Variables
-    public bool gameStarted;
-
-    public TextMeshProUGUI labelText;
-    public TextMeshProUGUI timerText;
-    public GameObject startButton;
-    public GameObject scoreButton;
+    
 
     //SaveLoad Variables
     [SerializeField]
     string name;
-    int score;
-    int timer = 10;
+    public int score;
 
     [SerializeField]
-    GameObject nameField;
+    public GameObject nameField;
 
     [SerializeField]
-    TextMeshProUGUI myText, scoreText, highScoreText;
+    public TextMeshProUGUI myText, scoreText, highScoreText;
+
+    TextMeshProUGUI[] LeaderBoard;
     
 
 
@@ -40,9 +35,6 @@ public class SaveLoad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameStarted = false;
-        //timerText.text = timer.ToString();
-
         myText = nameField.GetComponentInChildren<TextMeshProUGUI>();
         LoadInfo();
         myText.text = myContainer.name;
@@ -52,48 +44,7 @@ public class SaveLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameStarted)
-        {
-            startButton.SetActive(false);
-            scoreButton.SetActive(true);
-
-            labelText.text = "GO";
-
-            StartCoroutine(Timer());
-            if (timer <= 0)
-            {
-                labelText.text = "Done";
-                scoreButton.SetActive(false);
-                gameStarted = false;
-            }
-        }
-        else
-        {
-            startButton.SetActive(true);
-            scoreButton.SetActive(false);
-        }
-    }
-    
-    //Click Counter Methods
-    public void AddScore()
-    {
-        score += 1;
-        scoreText.text = "Your Score: " + score.ToString();
-    }
-
-    public void StartGame()
-    {
-        if (nameField.GetComponentInChildren<TextMeshProUGUI>().text != "")
-        {
-            gameStarted = true;
-        }
-    }
-    
-    // Enumerator for the timer
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(10);
-        timer -= 1;
+        
     }
 
     //SAVELOAD METHODS
