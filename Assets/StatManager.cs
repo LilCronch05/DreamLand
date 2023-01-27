@@ -5,20 +5,10 @@ using UnityEngine.UI;
 
 public class StatManager : MonoBehaviour
 {
-    public int points;
-    public string stat;
-    public int statValue;
-    Button increaseStat;
-    Button decreaseStat;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //This is the script that will be used to manage the stats of the character. 
+    //  It will be used to add and subtract points from the stats of the character.
+    //  It will also be used to save the stats of the character to a file.
+    
+    //the character will only have 50 points to spend on stats
+    
 }
