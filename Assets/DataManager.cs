@@ -19,6 +19,7 @@ public class DataManager : MonoBehaviour
 
     public Button[] profileButtons;
     public Button[] classButtons;
+    public Button resetButton;
 
     public InputField characterName;
     public TextMeshProUGUI statPoints;
@@ -28,6 +29,9 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         myContainer = new SaveContainer();
+        LoadData();
+        index = -1;
+        classButtons[0].interactable = false;
 
     }
 
@@ -35,7 +39,7 @@ public class DataManager : MonoBehaviour
     {
         if (File.Exists("SaveData/Profiles.xml"))
         {
-            FileStream stream = new FileStream("SaveFiles/Profiles.xml", FileMode.Open);
+            FileStream stream = File.Open("SaveFiles/Profiles.xml", FileMode.Open);
             XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
             myContainer = serializer.Deserialize(stream) as SaveContainer;
             stream.Close();
@@ -46,7 +50,7 @@ public class DataManager : MonoBehaviour
 
     public void SaveData()
     {
-        FileStream stream = new FileStream("SaveFiles/Profiles.xml", FileMode.Create);
+        FileStream stream = File.Open("SaveFiles/Profiles.xml", FileMode.Create);
         XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
         serializer.Serialize(stream, myContainer);
         stream.Close();
@@ -66,11 +70,14 @@ public class DataManager : MonoBehaviour
         else
         {
             index = buttonIndex;
+            myContainer.currentIndex = index;
         }
         characterName.text = myContainer.characterProfiles[index].GetCharacterName();
         statPoints.text = myContainer.characterProfiles[index].GetCharacterStatPoints().ToString();
         characterLevel.text = myContainer.characterProfiles[index].GetCharacterLevel().ToString();
         classButtons[myContainer.characterProfiles[index].GetCharacterClass()].Select();
+
+        resetButton.interactable = true;
     }
 
     public void ClearProfile()
