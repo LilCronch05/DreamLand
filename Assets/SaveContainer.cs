@@ -14,7 +14,7 @@ public class SaveContainer : MonoBehaviour
     }
     public void AddProfile()
     {
-        characterProfiles.Add(new CharacterProfile("Profile " + (characterProfiles.Count + 1).ToString(), 0, 50, 1, 0, 0, 0, 0, 0, 0));
+        characterProfiles.Add(new CharacterProfile());
     }
     public void RemoveProfile(int index)
     {
