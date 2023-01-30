@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterProfile : MonoBehaviour
 {
@@ -40,7 +42,7 @@ public class CharacterProfile : MonoBehaviour
         characterLevel = increaseLevel;
         characterExperience = addExperience;
 
-        // Character Stats
+        //Character Stats
         characterConstitution = constitution;
         characterStrength = strength;
         characterDexterity = dexterity;

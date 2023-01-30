@@ -15,21 +15,18 @@ using TMPro;
 
 public class DataManager : MonoBehaviour
 {
-    public SaveContainer myContainer;
+    SaveContainer myContainer;
 
     [SerializeField]
     public Button[] profileButtons, classButtons;
     public Button resetButton;
-    
-    [SerializeField]
-    public InputField characterName, characterLevel;
-    public TextMeshProUGUI statPoints;
+    public InputField characterName;
+    public TextMeshProUGUI statPoints, characterLevel;
     public int index;
 
     void Start()
     {
         myContainer = new SaveContainer();
-        LoadData();
         if (myContainer.characterProfiles.Count > 0)
         {
             index = 0;
@@ -41,29 +38,14 @@ public class DataManager : MonoBehaviour
         UpdateProfileButtons();
     }
 
-    public void NewProfile()
-    {
-        myContainer.AddProfile();
-        index = myContainer.characterProfiles.Count - 1;
-        UpdateProfileButtons();
-        SaveData();
-    }
-
     public void ClearProfile()
     {
         if (index < myContainer.characterProfiles.Count)
         {
-            myContainer.RemoveProfile(index);
-            if (index >= myContainer.characterProfiles.Count)
-            {
-                index--;
-            }
-            if (index > -1)
-            {
-                UpdateProfileButtons();
-            }
+            myContainer.characterProfiles.RemoveAt(index);
+           
             // Clear the profile data.
-            myContainer.characterProfiles[index].SetCharacterName("Profile " + (index + 1).ToString());
+            myContainer.characterProfiles[index].SetCharacterName("Profile " + (index + 1));
             myContainer.characterProfiles[index].SetCharacterStatPoints(50);
             myContainer.characterProfiles[index].SetCharacterLevel(1);
             myContainer.characterProfiles[index].SetCharacterClass(0);
@@ -72,11 +54,8 @@ public class DataManager : MonoBehaviour
             myContainer.characterProfiles[index].SetCharacterConstitution(0);
             myContainer.characterProfiles[index].SetCharacterIntelligence(0);
             myContainer.characterProfiles[index].SetCharacterWisdom(0);
-            
-            //clear the character name
-            characterName.text = "";
 
-            SaveData();
+            UpdateProfileButtons();
         }
     }
 
@@ -92,55 +71,45 @@ public class DataManager : MonoBehaviour
         for (int i = 0; i < myContainer.characterProfiles.Count; i++)
         {
             profileButtons[i].gameObject.SetActive(true);
-            profileButtons[i].GetComponentInChildren<Text>().text = myContainer.characterProfiles[i].GetCharacterName();
+            profileButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = myContainer.characterProfiles[i].GetCharacterName();
         }
 
         // If the number of profiles loaded is less than the profile buttons available then activate the next
         // profile button and set the text to "Add Profile".
-        if (myContainer.characterProfiles.Count < 5)
+        if (myContainer.characterProfiles.Count < 4)
         {
             profileButtons[myContainer.characterProfiles.Count].gameObject.SetActive(true);
-            profileButtons[myContainer.characterProfiles.Count].GetComponentInChildren<Text>().text = "Add Profile";
+            profileButtons[myContainer.characterProfiles.Count].GetComponentInChildren<TextMeshProUGUI>().text = "Add Profile";
         }
-
-        if (myContainer.characterProfiles.Count == 0)
-        {
-            characterName.interactable = false;
-            classButtons[0].interactable = false;
-        }
-        else
-        {
-            characterName.interactable = true;
-            classButtons[0].interactable = true;
-        }
-        SaveData();
     }   
 
-    public void SelectProfile()
+    public void SelectProfile(int buttonIndex)
     {
         // If the profile button pressed does not yet have a profile associated with it then add a new profile.
-        if (index < myContainer.characterProfiles.Count - 1)
+        if (buttonIndex > myContainer.characterProfiles.Count - 1)
         {
             myContainer.AddProfile();
             index = myContainer.characterProfiles.Count - 1;
             myContainer.currentIndex = index;
+
             UpdateProfileButtons();
         }
         else
         {
-            UpdateProfileButtons();
+            index = buttonIndex;
+            myContainer.currentIndex = index;
         }
         //characterName.text = myContainer.characterProfiles[index].GetCharacterName();
-        //statPoints.text = myContainer.characterProfiles[index].GetCharacterStatPoints().ToString();
-        //characterLevel.text = myContainer.characterProfiles[index].GetCharacterLevel().ToString();
-        //classButtons[myContainer.characterProfiles[index].GetCharacterClass()].Select();
+        statPoints.text = myContainer.characterProfiles[index].GetCharacterStatPoints().ToString();
+        characterLevel.text = myContainer.characterProfiles[index].GetCharacterLevel().ToString();
+        classButtons[myContainer.characterProfiles[index].GetCharacterClass()].Select();
 
         resetButton.interactable = true;
     }
 
     public void SaveData()
     {
-        FileStream stream = File.Open("SaveFiles/Profiles.xml", FileMode.Create);
+        Stream stream = File.Open("SaveData/Profiles.xml", FileMode.Create);
         XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
         serializer.Serialize(stream, myContainer);
         stream.Close();
@@ -148,13 +117,10 @@ public class DataManager : MonoBehaviour
     
     public void LoadData()
     {
-        if (File.Exists("SaveData/Profiles.xml"))
-        {
-            FileStream stream = File.Open("SaveFiles/Profiles.xml", FileMode.Open);
-            XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
-            myContainer = serializer.Deserialize(stream) as SaveContainer;
-            stream.Close();
-        }
+        Stream stream = File.Open("SaveData/Profiles.xml", FileMode.Open);
+        XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
+        myContainer = (SaveContainer)serializer.Deserialize(stream);
+        stream.Close();
 
         UpdateProfileButtons();
     }
@@ -177,17 +143,7 @@ public class DataManager : MonoBehaviour
 
     public void PlayGame()
     {
-        //if the name is empty, don't let the player play
-        if (characterName.text == "")
-        {
-            return;
-        }
-        //if the name is not empty, let the player play
-        else
-        {
-            SaveData();
-            SceneManager.LoadScene(1);
-        }
+        SceneManager.LoadScene(1);
     }
 
     public void ExitGame()
