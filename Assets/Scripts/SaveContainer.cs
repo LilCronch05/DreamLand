@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public class SaveContainer : MonoBehaviour
+public class SaveContainer
 {
     public List<CharacterProfile> characterProfiles;
     public int currentIndex;

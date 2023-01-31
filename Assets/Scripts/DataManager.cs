@@ -27,6 +27,7 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         myContainer = new SaveContainer();
+        //LoadData();
         if (myContainer.characterProfiles.Count > 0)
         {
             index = 0;
@@ -92,6 +93,7 @@ public class DataManager : MonoBehaviour
             index = myContainer.characterProfiles.Count - 1;
             myContainer.currentIndex = index;
 
+            //ClearProfile();
             UpdateProfileButtons();
         }
         else
@@ -107,22 +109,20 @@ public class DataManager : MonoBehaviour
         resetButton.interactable = true;
     }
 
-    public void SaveData()
+    public void SaveData(int index)
     {
-        Stream stream = File.Open("SaveData/Profiles.xml", FileMode.Create);
+        Stream stream = File.Open("SaveData/Profile/CharacterData.xml" + index, FileMode.Create);
         XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
         serializer.Serialize(stream, myContainer);
         stream.Close();
     }
     
-    public void LoadData()
+    public void LoadData(int index)
     {
-        Stream stream = File.Open("SaveData/Profiles.xml", FileMode.Open);
+        Stream stream = File.Open("SaveData/Profile/CharacterData.xml" + index, FileMode.Open);
         XmlSerializer serializer = new XmlSerializer(typeof(SaveContainer));
         myContainer = (SaveContainer)serializer.Deserialize(stream);
         stream.Close();
-
-        UpdateProfileButtons();
     }
 
     public void ChangeName(string changeName)

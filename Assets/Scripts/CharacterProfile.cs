@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CharacterProfile : MonoBehaviour
+public class CharacterProfile
 {
     public string characterName;
     public int characterClassIndex;
