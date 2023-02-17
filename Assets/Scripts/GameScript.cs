@@ -17,11 +17,13 @@ public class GameScript : MonoBehaviour
     public int wisdom;
 
     public GameObject menu;
+    public GameObject characterInfo;
 
     // Start is called before the first frame update
     void Start()
     {
         menu.SetActive(false);
+        characterInfo.SetActive(false);
 
         //This will show the name, class, and stats of the character made in the character creation scene
         playerName = myContainer.characterProfiles[myContainer.currentIndex].characterName;
@@ -41,6 +43,11 @@ public class GameScript : MonoBehaviour
         {
             menu.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            characterInfo.SetActive(true);
+        }
     }
 
     public void Resume()
@@ -51,5 +58,10 @@ public class GameScript : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
