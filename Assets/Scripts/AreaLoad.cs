@@ -1,4 +1,3 @@
-using RPGCharacterAnims;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +12,7 @@ public class AreaLoad : MonoBehaviour
     [SerializeField]
     string areaName;
     bool transition = false;
-    RPGCharacterInputController player;
+    //RPGCharacterInputController player;
 
     // Update is called once per frame
     private void Update()
@@ -32,7 +31,7 @@ public class AreaLoad : MonoBehaviour
             PlayerInfo.piInstance.spawnLocation = exit.position;
             PlayerInfo.piInstance.currentScene = areaName;
 
-            player = other.GetComponent<RPGCharacterInputController>();
+            //player = other.GetComponent<RPGCharacterInputController>();
             //player.Fade(true);
             transition = true;
         }
