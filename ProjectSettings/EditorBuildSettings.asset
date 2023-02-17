@@ -8,17 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Field.unity
-    guid: 6ba9b9111266cf545aaeabbd9a9cde25
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Scenes/RPG-Character.unity
-    guid: 0c997d4567ac01447875ab0b9e9ac340
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 7cd4e93090478474bb6bad7157c983a1, type: 2}
-=======
     path: Assets/Scenes/GameWorld.unity
     guid: 6c90b8ab333917e4eb2cce7043a212b9
   m_configObjects: {}
->>>>>>> Stashed changes

@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(Vector3.up * mouseX * 2);
         }
     }
-
+    /*
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && Input.GetMouseButtonDown(0))
@@ -130,4 +130,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    */
 }

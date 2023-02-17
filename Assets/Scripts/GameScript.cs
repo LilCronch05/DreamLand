@@ -53,6 +53,7 @@ public class GameScript : MonoBehaviour
     public void Resume()
     {
         menu.SetActive(false);
+        characterInfo.SetActive(false);
     }
 
     public void ReturnToMenu()
