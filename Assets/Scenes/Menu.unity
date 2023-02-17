@@ -4211,19 +4211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab803ff635171f24892a55d937274d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profileButtons:
-  - {fileID: 86379815}
-  - {fileID: 2076819612}
-  - {fileID: 2085234745}
-  - {fileID: 104961473}
-  classButtons:
-  - {fileID: 517323802}
-  - {fileID: 462457479}
-  - {fileID: 161148491}
-  resetButton: {fileID: 705539565}
+  profileButtons: []
+  classButtons: []
   characterName: {fileID: 0}
-  statPoints: {fileID: 1185586563}
-  characterLevel: {fileID: 888589783}
+  resetButton: {fileID: 0}
+  statPoints: {fileID: 0}
+  characterLevel: {fileID: 0}
   index: 0
 --- !u!114 &845496424
 MonoBehaviour:
@@ -4762,7 +4755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &977110753
 RectTransform:
   m_ObjectHideFlags: 0

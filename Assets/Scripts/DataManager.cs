@@ -18,9 +18,11 @@ public class DataManager : MonoBehaviour
     SaveContainer myContainer;
 
     [SerializeField]
-    public Button[] profileButtons, classButtons;
+    Button[] profileButtons, classButtons;
+    [SerializeField]
+    TMP_InputField characterName;
+    
     public Button resetButton;
-    public InputField characterName;
     public TextMeshProUGUI statPoints, characterLevel;
     public int index;
 
