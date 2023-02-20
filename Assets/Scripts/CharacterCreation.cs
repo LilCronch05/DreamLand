@@ -4,15 +4,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
+
+using UnityEngine.SceneManagement;
 
 public class CharacterCreation : MonoBehaviour
 {
     [SerializeField]
     TMP_InputField nameField;
     [SerializeField]
-    Slider strengthSlider;
-    [SerializeField]
-    Button[] profileButtons, classButtons;
+    Button[] profileButtons, classButtons, increaseStatButtons, decreaseStatButtons;
     [SerializeField]
     GameObject newProfilePanel;
 
@@ -43,15 +48,12 @@ public class CharacterCreation : MonoBehaviour
             UpdateProfileUI();
 
             nameField.interactable = false;
-            strengthSlider.interactable = false;
         }
         else
         {
             nameField.interactable = true;
-            strengthSlider.interactable = true;
 
             nameField.text = "";
-            strengthSlider.value = 0;
         }
     }
     public void ChangeProfileName(string name)
@@ -67,12 +69,21 @@ public class CharacterCreation : MonoBehaviour
     void UpdateProfileUI()
     {
         nameField.text = DataManager1.dmInstance.myProfile.charName;
-        strengthSlider.value = DataManager1.dmInstance.myProfile.charSTR;
     }
 
     public void DoneEditting()
     {
         profileButtons[DataManager1.dmInstance.myProfile.charID].GetComponentInChildren<TextMeshProUGUI>().text = DataManager1.dmInstance.myProfile.charName;
         DataManager1.dmInstance.SaveProfile(DataManager1.dmInstance.myProfile.charID);
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

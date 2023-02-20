@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameScript : MonoBehaviour
 {
-    SaveContainer myContainer;
     public string playerName;
     public string playerClass;
     public int playerLevel;
@@ -26,13 +25,13 @@ public class GameScript : MonoBehaviour
         characterInfo.SetActive(false);
 
         //This will show the name, class, and stats of the character made in the character creation scene
-        playerName = myContainer.characterProfiles[myContainer.currentIndex].charName;
-        playerLevel = myContainer.characterProfiles[myContainer.currentIndex].charLevel;
-        strength = myContainer.characterProfiles[myContainer.currentIndex].charSTR;
-        dexterity = myContainer.characterProfiles[myContainer.currentIndex].charDEX;
-        constitution = myContainer.characterProfiles[myContainer.currentIndex].charCON;
-        intelligence = myContainer.characterProfiles[myContainer.currentIndex].charINT;
-        wisdom = myContainer.characterProfiles[myContainer.currentIndex].charWIS;
+        // playerName = myContainer.characterProfiles[myContainer.currentIndex].charName;
+        // playerLevel = myContainer.characterProfiles[myContainer.currentIndex].charLevel;
+        // strength = myContainer.characterProfiles[myContainer.currentIndex].charSTR;
+        // dexterity = myContainer.characterProfiles[myContainer.currentIndex].charDEX;
+        // constitution = myContainer.characterProfiles[myContainer.currentIndex].charCON;
+        // intelligence = myContainer.characterProfiles[myContainer.currentIndex].charINT;
+        // wisdom = myContainer.characterProfiles[myContainer.currentIndex].charWIS;
 
     }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.IO;
 using System.Xml.Serialization;
 using System;
+using System.Collections.Generic;
 
 // This script is used to save and load profile information including character and area data.
 public class DataManager1 : MonoBehaviour
