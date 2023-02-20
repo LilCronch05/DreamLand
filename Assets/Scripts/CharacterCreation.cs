@@ -61,11 +61,6 @@ public class CharacterCreation : MonoBehaviour
         DataManager1.dmInstance.myProfile.charName = name;
     }
 
-    public void ChangeProfileStrength(float value)
-    {
-        DataManager1.dmInstance.myProfile.charSTR = (int)value;
-    }
-
     void UpdateProfileUI()
     {
         nameField.text = DataManager1.dmInstance.myProfile.charName;

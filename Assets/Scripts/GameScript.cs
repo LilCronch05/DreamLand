@@ -25,14 +25,15 @@ public class GameScript : MonoBehaviour
         characterInfo.SetActive(false);
 
         //This will show the name, class, and stats of the character made in the character creation scene
-        // playerName = myContainer.characterProfiles[myContainer.currentIndex].charName;
-        // playerLevel = myContainer.characterProfiles[myContainer.currentIndex].charLevel;
-        // strength = myContainer.characterProfiles[myContainer.currentIndex].charSTR;
-        // dexterity = myContainer.characterProfiles[myContainer.currentIndex].charDEX;
-        // constitution = myContainer.characterProfiles[myContainer.currentIndex].charCON;
-        // intelligence = myContainer.characterProfiles[myContainer.currentIndex].charINT;
-        // wisdom = myContainer.characterProfiles[myContainer.currentIndex].charWIS;
-
+        playerName = PlayerPrefs.GetString("PlayerName");
+        playerClass = PlayerPrefs.GetString("PlayerClass");
+        playerLevel = PlayerPrefs.GetInt("PlayerLevel");
+        strength = PlayerPrefs.GetInt("Strength");
+        dexterity = PlayerPrefs.GetInt("Dexterity");
+        constitution = PlayerPrefs.GetInt("Constitution");
+        intelligence = PlayerPrefs.GetInt("Intelligence");
+        wisdom = PlayerPrefs.GetInt("Wisdom");
+        
     }
 
     // Update is called once per frame
