@@ -3970,7 +3970,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 713783884}
-  - component: {fileID: 713783885}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -3993,31 +3992,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &713783885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713783882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea73f2e5cdf00e4cab4fe26ae9e8abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myProfile:
-    charID: 0
-    charName: New Character
-    charClassIndex: 0
-    charStatPoints: 50
-    charLevel: 1
-    charExperience: 0
-    charCON: 0
-    charSTR: 0
-    charDEX: 0
-    charINT: 0
-    charWIS: 0
-  rootPath: SaveData
 --- !u!1 &829907133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,7 +4139,6 @@ GameObject:
   - component: {fileID: 845496421}
   - component: {fileID: 845496420}
   - component: {fileID: 845496419}
-  - component: {fileID: 845496425}
   - component: {fileID: 845496424}
   m_Layer: 5
   m_Name: Canvas
@@ -4289,41 +4262,6 @@ MonoBehaviour:
   constitutionValue: 0
   intelligenceValue: 0
   wisdomValue: 0
---- !u!114 &845496425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845496418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df21cf852ef64544a21b3a4cffa910d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameField: {fileID: 183454142}
-  profileButtons:
-  - {fileID: 86379815}
-  - {fileID: 2076819612}
-  - {fileID: 2085234745}
-  - {fileID: 104961473}
-  classButtons:
-  - {fileID: 517323802}
-  - {fileID: 462457479}
-  - {fileID: 161148491}
-  increaseStatButtons:
-  - {fileID: 33065360}
-  - {fileID: 334404673}
-  - {fileID: 1294226128}
-  - {fileID: 7930416}
-  - {fileID: 1357372099}
-  decreaseStatButtons:
-  - {fileID: 39713958}
-  - {fileID: 1532040521}
-  - {fileID: 1125923095}
-  - {fileID: 2103155107}
-  - {fileID: 1061304358}
-  newProfilePanel: {fileID: 363783157}
 --- !u!1 &888589782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,7 +5358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496425}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterCreation, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -8637,7 +8575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496425}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterCreation, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1

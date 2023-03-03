@@ -4,81 +4,98 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters;
-using System.Runtime.Serialization.Formatters.Binary;
-
-using UnityEngine.SceneManagement;
 
 public class CharacterCreation : MonoBehaviour
 {
-    [SerializeField]
-    TMP_InputField nameField;
-    [SerializeField]
-    Button[] profileButtons, classButtons, increaseStatButtons, decreaseStatButtons;
-    [SerializeField]
-    GameObject newProfilePanel;
+    [SerializeField] TMP_InputField nameField;
+    [SerializeField] Slider strengthSlider;
+    [SerializeField] Button[] profileButtons;
+    [SerializeField] GameObject newProfilePanel, confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
-    
+    CharacterData myCharacter;    
 
     // Start is called before the first frame update
     void Start()
     {
+        myCharacter = new CharacterData();
+
         for (int i = 0; i < profileButtons.Length; i++)
         {
-            if (DataManager1.dmInstance.LoadProfile(i))
+            if (DataManager.dmInstance.LoadData(ref myCharacter, i))
             {
-                profileButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = DataManager1.dmInstance.myProfile.charName;
+                profileButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
             }
         }
     }
 
     public void SelectProfile(int index)
     {
-        DataManager1.dmInstance.myProfile.charID = index;
+        myCharacter.charID = index;
         newProfilePanel.SetActive(true);
 
         
 
-        if (DataManager1.dmInstance.LoadProfile(index))
+        if (DataManager.dmInstance.LoadData(ref myCharacter, index))
         {
             
             UpdateProfileUI();
 
             nameField.interactable = false;
+            strengthSlider.interactable = false;
+            doneButton.SetActive(false);
+            deleteButton.SetActive(true);
         }
         else
         {
             nameField.interactable = true;
+            strengthSlider.interactable = true;
+            doneButton.SetActive(true);
+            deleteButton.SetActive(false);
 
             nameField.text = "";
+            strengthSlider.value = 0;
         }
     }
     public void ChangeProfileName(string name)
     {
-        DataManager1.dmInstance.myProfile.charName = name;
+        myCharacter.charName = name;
+    }
+
+    public void ChangeProfileStrength(float value)
+    {
+        myCharacter.charSTR = (int)value;
     }
 
     void UpdateProfileUI()
     {
-        nameField.text = DataManager1.dmInstance.myProfile.charName;
+        nameField.text = myCharacter.charName;
+        strengthSlider.value = myCharacter.charSTR;
     }
 
     public void DoneEditting()
     {
-        profileButtons[DataManager1.dmInstance.myProfile.charID].GetComponentInChildren<TextMeshProUGUI>().text = DataManager1.dmInstance.myProfile.charName;
-        DataManager1.dmInstance.SaveProfile(DataManager1.dmInstance.myProfile.charID);
+        profileButtons[myCharacter.charID].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
+        DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
     }
 
-    public void PlayGame()
+    public void ConfirmDelete()
     {
-        SceneManager.LoadScene(1);
+        confirmationPanel.SetActive(true);
     }
 
-    public void ExitGame()
+    public void DeleteProfile()
     {
-        Application.Quit();
+        int index = myCharacter.charID;
+        DataManager.dmInstance.RemoveCharacter(index);
+        
+        myCharacter = new CharacterData();
+        profileButtons[index].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
+        confirmationPanel.SetActive(false);
+        newProfilePanel.SetActive(false);
+    }
+
+    public void CancelDelete()
+    {
+        confirmationPanel.SetActive(false);
     }
 }

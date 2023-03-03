@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DataContainer2 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+    <Profile>
+      <name>jam</name>
+      <colorIndex>1</colorIndex>
+      <shapeIndex>3</shapeIndex>
+    </Profile>
+    <Profile>
+      <name>glue</name>
+      <colorIndex>3</colorIndex>
+      <shapeIndex>1</shapeIndex>
+    </Profile>
+    <Profile>
+      <name>none</name>
+      <colorIndex>0</colorIndex>
+      <shapeIndex>0</shapeIndex>
+    </Profile>
+  </profiles>
+</DataContainer2>
