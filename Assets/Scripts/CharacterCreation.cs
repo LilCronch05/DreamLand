@@ -8,7 +8,7 @@ using System.IO;
 public class CharacterCreation : MonoBehaviour
 {
     [SerializeField] TMP_InputField nameField;
-    [SerializeField] Slider strengthSlider;
+    [SerializeField] Slider strengthSlider, dexteritySlider, constitutionSlider, intelligenceSlider, wisdomSlider;
     [SerializeField] Button[] profileButtons;
     [SerializeField] GameObject newProfilePanel, confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
@@ -42,6 +42,10 @@ public class CharacterCreation : MonoBehaviour
 
             nameField.interactable = false;
             strengthSlider.interactable = false;
+            dexteritySlider.interactable = false;
+            constitutionSlider.interactable = false;
+            intelligenceSlider.interactable = false;
+            wisdomSlider.interactable = false;
             doneButton.SetActive(false);
             deleteButton.SetActive(true);
         }
@@ -49,11 +53,19 @@ public class CharacterCreation : MonoBehaviour
         {
             nameField.interactable = true;
             strengthSlider.interactable = true;
+            dexteritySlider.interactable = true;
+            constitutionSlider.interactable = true;
+            intelligenceSlider.interactable = true;
+            wisdomSlider.interactable = true;
             doneButton.SetActive(true);
             deleteButton.SetActive(false);
 
             nameField.text = "";
             strengthSlider.value = 0;
+            dexteritySlider.value = 0;
+            constitutionSlider.value = 0;
+            intelligenceSlider.value = 0;
+            wisdomSlider.value = 0;
         }
     }
     public void ChangeProfileName(string name)
@@ -61,15 +73,29 @@ public class CharacterCreation : MonoBehaviour
         myCharacter.charName = name;
     }
 
+    // public void ChooseProfileClass(int classIndex)
+    // {
+    //     myCharacter.charClass = (int)classIndex;
+    // }
+
     public void ChangeProfileStrength(float value)
     {
         myCharacter.charSTR = (int)value;
+    }
+
+    public void ChangeProfileDexterity(float value)
+    {
+        myCharacter.charDex = (int)value;
     }
 
     void UpdateProfileUI()
     {
         nameField.text = myCharacter.charName;
         strengthSlider.value = myCharacter.charSTR;
+        dexteritySlider.value = myCharacter.charDEX;
+        constitutionSlider.value = myCharacter.charCON;
+        intelligenceSlider.value = myCharacter.charINT;
+        wisdomSlider.value = myCharacter.charWIS;
     }
 
     public void DoneEditting()

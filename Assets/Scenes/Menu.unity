@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: AddIntelligence
         m_Mode: 1
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: AddConstitution
         m_Mode: 1
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: SubtractConstitution
         m_Mode: 1
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: AddStrength
         m_Mode: 1
@@ -2530,6 +2530,7 @@ GameObject:
   - component: {fileID: 363783158}
   - component: {fileID: 363783160}
   - component: {fileID: 363783159}
+  - component: {fileID: 363783161}
   m_Layer: 5
   m_Name: RightPanelBG
   m_TagString: Untagged
@@ -2605,6 +2606,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363783157}
   m_CullTransparentMesh: 1
+--- !u!114 &363783161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363783157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64220cee060ae2c48a3c717eb91c3b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addStrength: {fileID: 334404673}
+  addDexterity: {fileID: 1294226128}
+  addConstitution: {fileID: 33065360}
+  addIntelligence: {fileID: 7930416}
+  addWisdom: {fileID: 1357372099}
+  subtractStrength: {fileID: 1532040521}
+  subtractDexterity: {fileID: 1125923095}
+  subtractConstitution: {fileID: 39713958}
+  subtractIntelligence: {fileID: 2103155107}
+  subtractWisdom: {fileID: 1061304358}
+  strength: {fileID: 1667503798}
+  dexterity: {fileID: 1453117935}
+  constitution: {fileID: 1708964594}
+  intelligence: {fileID: 1573108001}
+  wisdom: {fileID: 1885678774}
+  statPoints: {fileID: 1185586563}
+  strengthValue: 0
+  dexterityValue: 0
+  constitutionValue: 0
+  intelligenceValue: 0
+  wisdomValue: 0
 --- !u!1 &366597067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,6 +4004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 713783884}
+  - component: {fileID: 713783885}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -3992,6 +4027,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &713783885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713783882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab803ff635171f24892a55d937274d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootPath: SaveData
 --- !u!1 &829907133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +4187,6 @@ GameObject:
   - component: {fileID: 845496421}
   - component: {fileID: 845496420}
   - component: {fileID: 845496419}
-  - component: {fileID: 845496424}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4229,39 +4276,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &845496424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845496418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64220cee060ae2c48a3c717eb91c3b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addStrength: {fileID: 334404673}
-  addDexterity: {fileID: 1294226128}
-  addConstitution: {fileID: 33065360}
-  addIntelligence: {fileID: 7930416}
-  addWisdom: {fileID: 1357372099}
-  subtractStrength: {fileID: 1532040521}
-  subtractDexterity: {fileID: 1125923095}
-  subtractConstitution: {fileID: 39713958}
-  subtractIntelligence: {fileID: 2103155107}
-  subtractWisdom: {fileID: 1061304358}
-  strength: {fileID: 1667503798}
-  dexterity: {fileID: 1453117935}
-  constitution: {fileID: 1708964594}
-  intelligence: {fileID: 1573108001}
-  wisdom: {fileID: 1885678774}
-  statPoints: {fileID: 1185586563}
-  strengthValue: 0
-  dexterityValue: 0
-  constitutionValue: 0
-  intelligenceValue: 0
-  wisdomValue: 0
 --- !u!1 &888589782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,7 +4780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &977110753
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5059,7 +5073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: SubtractWisdom
         m_Mode: 1
@@ -5530,7 +5544,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: SubtractDexterity
         m_Mode: 1
@@ -6264,7 +6278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: AddDexterity
         m_Mode: 1
@@ -6533,7 +6547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: AddWisdom
         m_Mode: 1
@@ -7550,7 +7564,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: SubtractStrength
         m_Mode: 1
@@ -8248,6 +8262,7 @@ GameObject:
   - component: {fileID: 1836356087}
   - component: {fileID: 1836356089}
   - component: {fileID: 1836356088}
+  - component: {fileID: 1836356090}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -8316,6 +8331,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836356086}
   m_CullTransparentMesh: 1
+--- !u!114 &1836356090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836356086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110f1b78afb2ad24d9b0207970046132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 183454142}
+  strengthSlider: {fileID: 0}
+  profileButtons: []
+  newProfilePanel: {fileID: 0}
+  confirmationPanel: {fileID: 424200886}
+  doneButton: {fileID: 257117388}
+  deleteButton: {fileID: 705539563}
+  yesButton: {fileID: 384523616}
+  noButton: {fileID: 1929372593}
 --- !u!1 &1840021686
 GameObject:
   m_ObjectHideFlags: 0
@@ -10144,7 +10180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845496424}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StatManager, Assembly-CSharp
         m_MethodName: SubtractIntelligence
         m_Mode: 1
