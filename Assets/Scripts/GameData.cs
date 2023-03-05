@@ -9,13 +9,23 @@ public class CharacterData
 {
     public int charID;
     public string charName;
+    public int charClass;
+    public int charCON;
     public int charSTR;
+    public int charDEX;
+    public int charINT;
+    public int charWIS;
 
     public CharacterData()
     {
         charID = 0;
         charName = "Empty";
+        charClass = 0;
+        charCON = 0;
         charSTR = 0;
+        charDEX = 0;
+        charINT = 0;
+        charWIS = 0;
     }
 }
 

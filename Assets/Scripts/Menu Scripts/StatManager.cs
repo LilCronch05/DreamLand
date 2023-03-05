@@ -14,8 +14,7 @@ public class StatManager : MonoBehaviour
     //the character will only have 50 points to spend on stats
 
     //These buttons will be used to add and subtract points from the stats
-    public Button addStrength, addDexterity, addConstitution, addIntelligence, addWisdom;
-    public Button subtractStrength, subtractDexterity, subtractConstitution, subtractIntelligence, subtractWisdom;
+    public Slider strengthSlider, dexteritySlider, constitutionSlider, intelligenceSlider, wisdomSlider;
 
     //These are the text fields that will display the stats
     public TextMeshProUGUI strength, dexterity, constitution, intelligence, wisdom;

@@ -4,13 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class CharacterCreation : MonoBehaviour
 {
     [SerializeField] TMP_InputField nameField;
     [SerializeField] Slider strengthSlider, dexteritySlider, constitutionSlider, intelligenceSlider, wisdomSlider;
     [SerializeField] Button[] profileButtons;
-    [SerializeField] GameObject newProfilePanel, confirmationPanel, doneButton, deleteButton, yesButton, noButton;
+    [SerializeField] Button[] classButtons;
+    [SerializeField] GameObject confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
     CharacterData myCharacter;    
 
@@ -30,10 +32,7 @@ public class CharacterCreation : MonoBehaviour
 
     public void SelectProfile(int index)
     {
-        myCharacter.charID = index;
-        newProfilePanel.SetActive(true);
-
-        
+        myCharacter.charID = index;        
 
         if (DataManager.dmInstance.LoadData(ref myCharacter, index))
         {
@@ -73,10 +72,15 @@ public class CharacterCreation : MonoBehaviour
         myCharacter.charName = name;
     }
 
-    // public void ChooseProfileClass(int classIndex)
-    // {
-    //     myCharacter.charClass = (int)classIndex;
-    // }
+    public void ChooseProfileClass(int classIndex)
+    {
+        myCharacter.charClass = (int)classIndex;
+    }
+    
+    public void ChangeProfileConstitution(float value)
+    {
+        myCharacter.charCON = (int)value;
+    }
 
     public void ChangeProfileStrength(float value)
     {
@@ -85,7 +89,17 @@ public class CharacterCreation : MonoBehaviour
 
     public void ChangeProfileDexterity(float value)
     {
-        myCharacter.charDex = (int)value;
+        myCharacter.charDEX = (int)value;
+    }
+
+    public void ChangeProfileIntelligence(float value)
+    {
+        myCharacter.charINT = (int)value;
+    }
+
+    public void ChangeProfileWisdom(float value)
+    {
+        myCharacter.charWIS = (int)value;
     }
 
     void UpdateProfileUI()
@@ -117,11 +131,21 @@ public class CharacterCreation : MonoBehaviour
         myCharacter = new CharacterData();
         profileButtons[index].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
         confirmationPanel.SetActive(false);
-        newProfilePanel.SetActive(false);
     }
 
     public void CancelDelete()
     {
         confirmationPanel.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
+        SceneManager.LoadScene("Field1");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

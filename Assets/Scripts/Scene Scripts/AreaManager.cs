@@ -23,7 +23,7 @@ public class AreaManager : MonoBehaviour
     {
         if (transition /*&& !player.Fading()*/)
         {
-            SceneManager.LoadScene("Field", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Field1", LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(PlayerInfo.piInstance.currentScene);
         }
     }

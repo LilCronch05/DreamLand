@@ -20,7 +20,7 @@ public class AreaLoad : MonoBehaviour
         if (transition /*&& !player.Fading()*/)
         {
             SceneManager.LoadScene(areaName, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("Field");
+            SceneManager.UnloadSceneAsync("Field1");
         }
     }
 
