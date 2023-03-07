@@ -46,12 +46,14 @@ public class EnemyAI : MonoBehaviour
         {
             agent.SetDestination(player.position);
             enemyAnim.SetBool("isSprinting", true);
+            //speed up the enemy
+            agent.speed = 5.0f;
         }
 
         //once they have reached the player, they will attack
-        if (agent.remainingDistance < 1.5f)
+        if (player.position == agent.destination)
         {
-            enemyAnim.SetBool("isAttacking", false);
+            enemyAnim.SetBool("isAttacking", true);
             timer += Time.deltaTime;
             if (timer >= 2.0f)
             {

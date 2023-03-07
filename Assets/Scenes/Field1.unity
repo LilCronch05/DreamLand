@@ -8762,7 +8762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff684200f1eeb7d4c9d9f0a0cd676291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entrance: {fileID: 1480338550}
+  entrance: {fileID: 1284980603}
   exit: {fileID: 2138274014}
   areaName: Inn
 --- !u!1 &942389275
