@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class CharacterData
+public class GameData
 {
     public int charID;
     public string charName;
@@ -16,7 +16,7 @@ public class CharacterData
     public int charINT;
     public int charWIS;
 
-    public CharacterData()
+    public GameData()
     {
         charID = 0;
         charName = "Empty";

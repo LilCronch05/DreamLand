@@ -14,12 +14,12 @@ public class CharacterCreation : MonoBehaviour
     [SerializeField] Button[] classButtons;
     [SerializeField] GameObject confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
-    CharacterData myCharacter;    
+    GameData myCharacter;    
 
     // Start is called before the first frame update
     void Start()
     {
-        myCharacter = new CharacterData();
+        myCharacter = new GameData();
 
         for (int i = 0; i < profileButtons.Length; i++)
         {
@@ -128,7 +128,7 @@ public class CharacterCreation : MonoBehaviour
         int index = myCharacter.charID;
         DataManager.dmInstance.RemoveCharacter(index);
         
-        myCharacter = new CharacterData();
+        myCharacter = new GameData();
         profileButtons[index].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
         confirmationPanel.SetActive(false);
     }

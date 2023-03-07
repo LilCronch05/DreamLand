@@ -167,7 +167,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && Input.GetMouseButtonDown(0))
         {
             collision.gameObject.GetComponent<EnemyAI>().health -= damage;
-            GetComponent<EnemyAI>().enemyAnim.SetBool("isHit", true);
         }
     }
 

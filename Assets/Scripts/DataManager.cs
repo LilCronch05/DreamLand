@@ -28,16 +28,16 @@ public class DataManager : MonoBehaviour
         }
     }
     
-    // This method will save the CharacterData passed in by reference for the profile using the index passed in
-    public void SaveData(ref CharacterData data, int index)
+    // This method will save the GameData passed in by reference for the profile using the index passed in
+    public void SaveData(ref GameData data, int index)
     {
         if (!Directory.Exists(DataManager.dmInstance.rootPath + "/Profile" + index))
         {
             Directory.CreateDirectory(DataManager.dmInstance.rootPath + "/Profile" + index);
         }
 
-        Stream stream = File.Open(rootPath + "/Profile" + index + "/CharacterData.xml", FileMode.Create);
-        XmlSerializer serializer = new XmlSerializer(typeof(CharacterData));
+        Stream stream = File.Open(rootPath + "/Profile" + index + "/GameData.xml", FileMode.Create);
+        XmlSerializer serializer = new XmlSerializer(typeof(GameData));
         serializer.Serialize(stream, data);
         stream.Close();
     }
@@ -56,16 +56,16 @@ public class DataManager : MonoBehaviour
         stream.Close();
     }
 
-    // This method will load the CharacterData passed in by reference for the profile using the index passed in
-    public bool LoadData(ref CharacterData data, int index)
+    // This method will load the GameData passed in by reference for the profile using the index passed in
+    public bool LoadData(ref GameData data, int index)
     {
         bool returnCode = false;
 
-        if (File.Exists(DataManager.dmInstance.rootPath + "/Profile" + index + "/CharacterData.xml"))
+        if (File.Exists(DataManager.dmInstance.rootPath + "/Profile" + index + "/GameData.xml"))
         {
-            Stream stream = File.Open(rootPath + "/Profile" + index + "/CharacterData.xml", FileMode.Open);
-            XmlSerializer serializer = new XmlSerializer(typeof(CharacterData));
-            data = (CharacterData)serializer.Deserialize(stream);
+            Stream stream = File.Open(rootPath + "/Profile" + index + "/GameData.xml", FileMode.Open);
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+            data = (GameData)serializer.Deserialize(stream);
             stream.Close();
 
             returnCode = true;
@@ -79,7 +79,7 @@ public class DataManager : MonoBehaviour
     {
         bool returnCode = false;
 
-        if (File.Exists(DataManager.dmInstance.rootPath + "/Profile" + index + "/CharacterData.xml"))
+        if (File.Exists(DataManager.dmInstance.rootPath + "/Profile" + index + "/GameData.xml"))
         {
             Stream stream = File.Open(rootPath + "/Profile" + index + "/Area" + data.areaID + ".xml", FileMode.Open);
             XmlSerializer serializer = new XmlSerializer(typeof(AreaData));
@@ -94,6 +94,6 @@ public class DataManager : MonoBehaviour
 
     public void RemoveCharacter(int index)
     {
-        File.Delete(rootPath + "/Profile" + index + "/CharacterData.xml");
+        File.Delete(rootPath + "/Profile" + index + "/GameData.xml");
     }
 }

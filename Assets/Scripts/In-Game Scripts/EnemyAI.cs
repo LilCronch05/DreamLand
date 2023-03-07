@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     float timer;
     bool isInRange;
 
-    public Animator enemyAnim;
+    Animator enemyAnim;
 
     void Awake()
     {

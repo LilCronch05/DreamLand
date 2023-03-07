@@ -31,6 +31,7 @@ public class AreaLoad : MonoBehaviour
             PlayerInfo.piInstance.spawnLocation = exit.position;
             PlayerInfo.piInstance.currentScene = areaName;
 
+            player = other.GetComponent<PlayerController>();
             player.Fade(true);
             transition = true;
         }
