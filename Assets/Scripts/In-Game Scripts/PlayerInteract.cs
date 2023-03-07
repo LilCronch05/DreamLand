@@ -77,7 +77,7 @@ public class PlayerInteract : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "NPC")
+        if (other.gameObject.tag == "Player")
         {
             isInteracting = true;
             npcInteract = other.gameObject;
@@ -86,7 +86,7 @@ public class PlayerInteract : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "NPC")
+        if (other.gameObject.tag == "Player")
         {
             isInteracting = false;
             npcInteract = null;

@@ -9,12 +9,14 @@ using UnityEngine.SceneManagement;
 public class CharacterCreation : MonoBehaviour
 {
     [SerializeField] TMP_InputField nameField;
+    [SerializeField] TextMeshProUGUI STRText, DEXText, CONText, INTText, WISText, TotalStatText;
     [SerializeField] Slider strengthSlider, dexteritySlider, constitutionSlider, intelligenceSlider, wisdomSlider;
     [SerializeField] Button[] profileButtons;
     [SerializeField] Button[] classButtons;
     [SerializeField] GameObject confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
-    GameData myCharacter;    
+    GameData myCharacter;
+    StatManager statManager;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class CharacterCreation : MonoBehaviour
 
     public void SelectProfile(int index)
     {
-        myCharacter.charID = index;        
+        myCharacter.charID = index;
 
         if (DataManager.dmInstance.LoadData(ref myCharacter, index))
         {
@@ -47,6 +49,11 @@ public class CharacterCreation : MonoBehaviour
             wisdomSlider.interactable = false;
             doneButton.SetActive(false);
             deleteButton.SetActive(true);
+
+            if(index == 0)
+            {
+                doneButton.SetActive(true);
+            }
         }
         else
         {
@@ -67,6 +74,7 @@ public class CharacterCreation : MonoBehaviour
             wisdomSlider.value = 0;
         }
     }
+
     public void ChangeProfileName(string name)
     {
         myCharacter.charName = name;
@@ -114,6 +122,13 @@ public class CharacterCreation : MonoBehaviour
 
     public void DoneEditting()
     {
+        myCharacter.charName = nameField.text;
+        myCharacter.charSTR = (int)strengthSlider.value;
+        myCharacter.charDEX = (int)dexteritySlider.value;
+        myCharacter.charCON = (int)constitutionSlider.value;
+        myCharacter.charINT = (int)intelligenceSlider.value;
+        myCharacter.charWIS = (int)wisdomSlider.value;
+
         profileButtons[myCharacter.charID].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
         DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
     }
@@ -141,11 +156,33 @@ public class CharacterCreation : MonoBehaviour
     public void StartGame()
     {
         DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
-        SceneManager.LoadScene("Field1");
+        //SceneManager.LoadScene("Field1");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    //Slider value changed
+    public void OnSliderValueChanged()
+    {
+        int total = (int)strengthSlider.value + (int)dexteritySlider.value + (int)constitutionSlider.value + (int)intelligenceSlider.value + (int)wisdomSlider.value;
+
+        if (total > 50)
+        {
+            strengthSlider.value = strengthSlider.value - 1;
+            dexteritySlider.value = dexteritySlider.value - 1;
+            constitutionSlider.value = constitutionSlider.value - 1;
+            intelligenceSlider.value = intelligenceSlider.value - 1;
+            wisdomSlider.value = wisdomSlider.value - 1;
+        }
+        TotalStatText.text = "Used Stat Points: " + total.ToString();
+
+        STRText.text = "STR: " + strengthSlider.value.ToString();
+        DEXText.text = "DEX: " + dexteritySlider.value.ToString();
+        CONText.text = "CON: " + constitutionSlider.value.ToString();
+        INTText.text = "INT: " + intelligenceSlider.value.ToString();
+        WISText.text = "WIS: " + wisdomSlider.value.ToString();
     }
 }
