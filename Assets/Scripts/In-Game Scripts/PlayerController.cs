@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             hInput = 0;
             if (fadeOn && fogPanel.color.a < 1)
             {
-                Debug.Log(fogPanel.color.a);
+                //Debug.Log(fogPanel.color.a);
                 fogPanel.color = new Color(fogPanel.color.r, fogPanel.color.g, fogPanel.color.b, fogPanel.color.a + Time.deltaTime);
 
                 hintText.SetActive(true);
