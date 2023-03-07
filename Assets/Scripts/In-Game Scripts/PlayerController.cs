@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public float health = 100;
+    public int damage = 10;
     public float speed = 10.0f;
     public float jumpForce = 10.0f;
-    public float horizontalInput, forwardInput, jumpInput;
+    public float hInput, vInput, jumpInput;
     Vector3 movementDirection;
-
     Animator playerAnim;
+
+    [SerializeField]
+    public GameObject model;
+    [SerializeField]
+    Image fogPanel;
+    [SerializeField]
+    GameObject hintText;
+    [SerializeField]
+    bool fade, fadeOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +31,44 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
-        jumpInput = Input.GetAxis("Jump");
-        movementDirection = new Vector3(horizontalInput, 0, forwardInput);
-        movementDirection.Normalize();
-
-        // Move player forwards and backwards
-        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
+        if (!fade)
         {
-            transform.Translate(movementDirection * speed * Time.deltaTime, Space.Self);
+            vInput = Input.GetAxis("Vertical");
+            hInput = Input.GetAxis("Horizontal");               
+        }
+        else
+        {
+            vInput = 0;
+            hInput = 0;
+            if (fadeOn && fogPanel.color.a < 1)
+            {
+                Debug.Log(fogPanel.color.a);
+                fogPanel.color = new Color(fogPanel.color.r, fogPanel.color.g, fogPanel.color.b, fogPanel.color.a + Time.deltaTime);
+
+                hintText.SetActive(true);
+            }
+            else if (!fadeOn && fogPanel.color.a > 0)
+            {
+                fogPanel.color = new Color(fogPanel.color.r, fogPanel.color.g, fogPanel.color.b, fogPanel.color.a - Time.deltaTime);
+            }
+            else
+            {
+                fade = false;
+                hintText.SetActive(false);
+            }
+            
+        }
+
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        transform.Translate(new Vector3(hInput * speed * Time.deltaTime, 0, vInput * speed * Time.deltaTime));
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 2.0f;
+        }
+        else
+        {
+            speed = 1.0f;
         }
 
         //Make player jump
@@ -121,14 +161,24 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(Vector3.up * mouseX * 2);
         }
     }
-    /*
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && Input.GetMouseButtonDown(0))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyAI>().health -= damage;
+            GetComponent<EnemyAI>().enemyAnim.SetBool("isHit", true);
         }
-
     }
-    */
+
+    public void Fade(bool on)
+    {
+        fade = true;
+        fadeOn = on;
+    }
+
+    public bool Fading()
+    {
+        return fade;
+    }
 }

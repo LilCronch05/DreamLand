@@ -7,21 +7,21 @@ public class AreaManager : MonoBehaviour
 {
     [SerializeField]
     Transform spawn;
-    //RPGCharacterInputController player;
+    PlayerController player;
     bool transition = false;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject.FindGameObjectWithTag("Player").transform.position = spawn.position;
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<>();
-        //player.Fade(false);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.Fade(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transition /*&& !player.Fading()*/)
+        if (transition && !player.Fading())
         {
             SceneManager.LoadScene("Field1", LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(PlayerInfo.piInstance.currentScene);
@@ -30,8 +30,8 @@ public class AreaManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //player = other.GetComponent<>();
-        //player.Fade(true);
+        player = other.GetComponent<PlayerController>();
+        player.Fade(true);
         transition = true;
     }
 }
