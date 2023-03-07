@@ -1,0 +1,9 @@
+I will be honest nothing works.
+
+The character info won't properly save.
+The areas don't load properly
+The enemies aren't properly taking damage
+	- Which also makes it unable to test whether they will say dead
+The player can't take damage
+The player can't rest at the inn.
+There is no way to save game progress.
