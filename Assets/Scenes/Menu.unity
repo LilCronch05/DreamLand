@@ -2192,27 +2192,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363783157}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64220cee060ae2c48a3c717eb91c3b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strengthSlider: {fileID: 1731677483}
-  dexteritySlider: {fileID: 1392939069}
-  constitutionSlider: {fileID: 388290162}
-  intelligenceSlider: {fileID: 977383996}
-  wisdomSlider: {fileID: 1682830598}
-  strength: {fileID: 1667503798}
-  dexterity: {fileID: 1453117935}
-  constitution: {fileID: 1708964594}
-  intelligence: {fileID: 1573108001}
-  wisdom: {fileID: 1885678774}
-  statPoints: {fileID: 1185586563}
-  strengthValue: 0
-  dexterityValue: 0
-  constitutionValue: 0
-  intelligenceValue: 0
-  wisdomValue: 0
+  m_Constitution: 0
+  m_Strength: 0
+  m_Dexterity: 0
+  m_Intelligence: 0
+  m_Wisdom: 0
+  m_ConstitutionText: {fileID: 0}
+  m_StrengthText: {fileID: 0}
+  m_DexterityText: {fileID: 0}
+  m_IntelligenceText: {fileID: 0}
+  m_WisdomText: {fileID: 0}
+  m_NameText: {fileID: 0}
 --- !u!1 &366597067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,6 +3472,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522690174}
   m_CullTransparentMesh: 1
+--- !u!1 &667271207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667271209}
+  - component: {fileID: 667271208}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &667271208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667271207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff23bed5f4b26d4e80ff2b9b5354dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    charID: 0
+    charName: Empty
+    charClass: 0
+    charCON: 0
+    charSTR: 0
+    charDEX: 0
+    charINT: 0
+    charWIS: 0
+--- !u!4 &667271209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667271207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 689, y: 360.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692096084
 GameObject:
   m_ObjectHideFlags: 0

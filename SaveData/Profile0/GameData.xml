@@ -3,9 +3,9 @@
   <charID>0</charID>
   <charName>jam</charName>
   <charClass>0</charClass>
-  <charCON>18</charCON>
-  <charSTR>4</charSTR>
-  <charDEX>8</charDEX>
-  <charINT>8</charINT>
+  <charCON>8</charCON>
+  <charSTR>13</charSTR>
+  <charDEX>0</charDEX>
+  <charINT>9</charINT>
   <charWIS>0</charWIS>
 </GameData>

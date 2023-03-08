@@ -15,28 +15,25 @@ public class CharacterCreation : MonoBehaviour
     [SerializeField] Button[] classButtons;
     [SerializeField] GameObject confirmationPanel, doneButton, deleteButton, yesButton, noButton;
 
-    GameData myCharacter;
-    StatManager statManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        myCharacter = new GameData();
 
         for (int i = 0; i < profileButtons.Length; i++)
         {
-            if (DataManager.dmInstance.LoadData(ref myCharacter, i))
+            if (DataManager.dmInstance.LoadData(ref GameManager.gmInstance.gameData, i))
             {
-                profileButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
+                profileButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.gmInstance.gameData.charName;
             }
         }
     }
 
     public void SelectProfile(int index)
     {
-        myCharacter.charID = index;
+        GameManager.gmInstance.gameData.charID = index;
 
-        if (DataManager.dmInstance.LoadData(ref myCharacter, index))
+        if (DataManager.dmInstance.LoadData(ref GameManager.gmInstance.gameData, index))
         {
             
             UpdateProfileUI();
@@ -77,60 +74,60 @@ public class CharacterCreation : MonoBehaviour
 
     public void ChangeProfileName(string name)
     {
-        myCharacter.charName = name;
+        GameManager.gmInstance.gameData.charName = name;
     }
 
     public void ChooseProfileClass(int classIndex)
     {
-        myCharacter.charClass = (int)classIndex;
+        GameManager.gmInstance.gameData.charClass = (int)classIndex;
     }
     
     public void ChangeProfileConstitution(float value)
     {
-        myCharacter.charCON = (int)value;
+        GameManager.gmInstance.gameData.charCON = (int)value;
     }
 
     public void ChangeProfileStrength(float value)
     {
-        myCharacter.charSTR = (int)value;
+        GameManager.gmInstance.gameData.charSTR = (int)value;
     }
 
     public void ChangeProfileDexterity(float value)
     {
-        myCharacter.charDEX = (int)value;
+        GameManager.gmInstance.gameData.charDEX = (int)value;
     }
 
     public void ChangeProfileIntelligence(float value)
     {
-        myCharacter.charINT = (int)value;
+        GameManager.gmInstance.gameData.charINT = (int)value;
     }
 
     public void ChangeProfileWisdom(float value)
     {
-        myCharacter.charWIS = (int)value;
+        GameManager.gmInstance.gameData.charWIS = (int)value;
     }
 
     void UpdateProfileUI()
     {
-        nameField.text = myCharacter.charName;
-        strengthSlider.value = myCharacter.charSTR;
-        dexteritySlider.value = myCharacter.charDEX;
-        constitutionSlider.value = myCharacter.charCON;
-        intelligenceSlider.value = myCharacter.charINT;
-        wisdomSlider.value = myCharacter.charWIS;
+        nameField.text = GameManager.gmInstance.gameData.charName;
+        strengthSlider.value = GameManager.gmInstance.gameData.charSTR;
+        dexteritySlider.value = GameManager.gmInstance.gameData.charDEX;
+        constitutionSlider.value = GameManager.gmInstance.gameData.charCON;
+        intelligenceSlider.value = GameManager.gmInstance.gameData.charINT;
+        wisdomSlider.value = GameManager.gmInstance.gameData.charWIS;
     }
 
     public void DoneEditting()
     {
-        myCharacter.charName = nameField.text;
-        myCharacter.charSTR = (int)strengthSlider.value;
-        myCharacter.charDEX = (int)dexteritySlider.value;
-        myCharacter.charCON = (int)constitutionSlider.value;
-        myCharacter.charINT = (int)intelligenceSlider.value;
-        myCharacter.charWIS = (int)wisdomSlider.value;
+        GameManager.gmInstance.gameData.charName = nameField.text;
+        GameManager.gmInstance.gameData.charSTR = (int)strengthSlider.value;
+        GameManager.gmInstance.gameData.charDEX = (int)dexteritySlider.value;
+        GameManager.gmInstance.gameData.charCON = (int)constitutionSlider.value;
+        GameManager.gmInstance.gameData.charINT = (int)intelligenceSlider.value;
+        GameManager.gmInstance.gameData.charWIS = (int)wisdomSlider.value;
 
-        profileButtons[myCharacter.charID].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
-        DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
+        profileButtons[GameManager.gmInstance.gameData.charID].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.gmInstance.gameData.charName;
+        DataManager.dmInstance.SaveData(ref GameManager.gmInstance.gameData, GameManager.gmInstance.gameData.charID);
     }
 
     public void ConfirmDelete()
@@ -140,11 +137,11 @@ public class CharacterCreation : MonoBehaviour
 
     public void DeleteProfile()
     {
-        int index = myCharacter.charID;
+        int index = GameManager.gmInstance.gameData.charID;
         DataManager.dmInstance.RemoveCharacter(index);
         
-        myCharacter = new GameData();
-        profileButtons[index].GetComponentInChildren<TextMeshProUGUI>().text = myCharacter.charName;
+        GameManager.gmInstance.gameData = new GameData();
+        profileButtons[index].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.gmInstance.gameData.charName;
         confirmationPanel.SetActive(false);
     }
 
@@ -155,8 +152,8 @@ public class CharacterCreation : MonoBehaviour
 
     public void StartGame()
     {
-        DataManager.dmInstance.SaveData(ref myCharacter, myCharacter.charID);
-        //SceneManager.LoadScene("Field1");
+        DataManager.dmInstance.SaveData(ref GameManager.gmInstance.gameData, GameManager.gmInstance.gameData.charID);
+        SceneManager.LoadScene("Field1");
     }
 
     public void QuitGame()

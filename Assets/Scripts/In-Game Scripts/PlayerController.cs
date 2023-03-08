@@ -6,8 +6,8 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float health = 100;
-    public int damage = 10;
+    public float health;
+    public int damage;
     public float speed = 10.0f;
     public float jumpForce = 10.0f;
     public float hInput, vInput, jumpInput;
@@ -22,10 +22,17 @@ public class PlayerController : MonoBehaviour
     GameObject hintText;
     [SerializeField]
     bool fade, fadeOn;
+
+    StatManager myStats;
+
     // Start is called before the first frame update
     void Start()
     {
+        myStats = new StatManager();
+        
         playerAnim = GetComponent<Animator>();
+        health = myStats.m_Constitution * 10;
+        damage = myStats.m_Strength + (myStats.m_Dexterity / 2);
     }
 
     // Update is called once per frame

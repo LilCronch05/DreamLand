@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -299,60 +299,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72767663}
   m_CullTransparentMesh: 1
---- !u!1 &81900744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81900746}
-  - component: {fileID: 81900745}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &81900745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81900744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff23bed5f4b26d4e80ff2b9b5354dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: 
-  playerClass: 
-  playerLevel: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  menu: {fileID: 1601789847}
-  characterInfo: {fileID: 2051014333}
---- !u!4 &81900746
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81900744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 35.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216166278
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,9 +692,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 81900745}
-        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 647516621}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -885,7 +831,7 @@ GameObject:
   - component: {fileID: 528875442}
   - component: {fileID: 528875441}
   m_Layer: 5
-  m_Name: StatText (4)
+  m_Name: WIS StatText (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,8 +1038,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 81900745}
-        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
+      - m_Target: {fileID: 647516621}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1227,6 +1173,7 @@ GameObject:
   - component: {fileID: 647516619}
   - component: {fileID: 647516618}
   - component: {fileID: 647516617}
+  - component: {fileID: 647516621}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1319,6 +1266,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &647516621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647516616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810f925d9ef5b8441ab40ca92efa70aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 1601789847}
+  characterScreen: {fileID: 2051014333}
 --- !u!1 &749755492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,9 +1656,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 81900745}
-        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 647516621}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1757,7 +1718,7 @@ GameObject:
   - component: {fileID: 1175551393}
   - component: {fileID: 1175551392}
   m_Layer: 5
-  m_Name: StatText
+  m_Name: CON StatText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1969,8 +1930,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 81900745}
-        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
+      - m_Target: {fileID: 647516621}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
         m_Arguments:
@@ -2031,7 +1992,7 @@ GameObject:
   - component: {fileID: 1329688139}
   - component: {fileID: 1329688138}
   m_Layer: 5
-  m_Name: StatText (3)
+  m_Name: INT StatText (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2166,7 +2127,7 @@ GameObject:
   - component: {fileID: 1354802812}
   - component: {fileID: 1354802811}
   m_Layer: 5
-  m_Name: StatText (2)
+  m_Name: DEX StatText (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3183,7 +3144,7 @@ GameObject:
   - component: {fileID: 1993968752}
   - component: {fileID: 1993968751}
   m_Layer: 5
-  m_Name: StatText (1)
+  m_Name: STR StatText (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6033,6 +5994,7 @@ GameObject:
   - component: {fileID: 8855052669356463211}
   - component: {fileID: 9036980634098327857}
   - component: {fileID: 9036980634098327858}
+  - component: {fileID: 9036980634098327863}
   - component: {fileID: 9036980634098327859}
   - component: {fileID: 9036980634098327860}
   - component: {fileID: 9036980634098327861}
@@ -6293,6 +6255,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0.70000005, z: 0}
+--- !u!114 &9036980634098327863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189980434217406161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64220cee060ae2c48a3c717eb91c3b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Constitution: 0
+  m_Strength: 0
+  m_Dexterity: 0
+  m_Intelligence: 0
+  m_Wisdom: 0
+  m_ConstitutionText: {fileID: 0}
+  m_StrengthText: {fileID: 1993968751}
+  m_DexterityText: {fileID: 1354802811}
+  m_IntelligenceText: {fileID: 1329688138}
+  m_WisdomText: {fileID: 528875441}
+  m_NameText: {fileID: 425941540}
 --- !u!1 &9105106662420045508
 GameObject:
   m_ObjectHideFlags: 0
