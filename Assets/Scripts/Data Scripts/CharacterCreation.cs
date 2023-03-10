@@ -14,6 +14,7 @@ public class CharacterCreation : MonoBehaviour
     [SerializeField] Button[] profileButtons;
     [SerializeField] Button[] classButtons;
     [SerializeField] GameObject confirmationPanel, doneButton, deleteButton, yesButton, noButton;
+    [SerializeField] GameObject[] firstPanelButtons;
 
 
     // Start is called before the first frame update
@@ -44,13 +45,10 @@ public class CharacterCreation : MonoBehaviour
             constitutionSlider.interactable = false;
             intelligenceSlider.interactable = false;
             wisdomSlider.interactable = false;
-            doneButton.SetActive(false);
+            doneButton.SetActive(true);
             deleteButton.SetActive(true);
-
-            if(index == 0)
-            {
-                doneButton.SetActive(true);
-            }
+            firstPanelButtons[0].SetActive(false);
+            firstPanelButtons[1].SetActive(false);
         }
         else
         {
@@ -60,7 +58,7 @@ public class CharacterCreation : MonoBehaviour
             constitutionSlider.interactable = true;
             intelligenceSlider.interactable = true;
             wisdomSlider.interactable = true;
-            doneButton.SetActive(true);
+            doneButton.SetActive(false);
             deleteButton.SetActive(false);
 
             nameField.text = "";
@@ -111,10 +109,15 @@ public class CharacterCreation : MonoBehaviour
     {
         nameField.text = GameManager.gmInstance.gameData.charName;
         strengthSlider.value = GameManager.gmInstance.gameData.charSTR;
+        STRText.text = GameManager.gmInstance.gameData.charSTR.ToString();
         dexteritySlider.value = GameManager.gmInstance.gameData.charDEX;
+        DEXText.text = GameManager.gmInstance.gameData.charDEX.ToString();
         constitutionSlider.value = GameManager.gmInstance.gameData.charCON;
+        CONText.text = GameManager.gmInstance.gameData.charCON.ToString();
         intelligenceSlider.value = GameManager.gmInstance.gameData.charINT;
+        INTText.text = GameManager.gmInstance.gameData.charINT.ToString();
         wisdomSlider.value = GameManager.gmInstance.gameData.charWIS;
+        WISText.text = GameManager.gmInstance.gameData.charWIS.ToString();
     }
 
     public void DoneEditting()
