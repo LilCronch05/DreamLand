@@ -23,16 +23,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     bool fade, fadeOn;
 
-    StatManager myStats;
-
     // Start is called before the first frame update
     void Start()
-    {
-        myStats = new StatManager();
-        
+    {        
         playerAnim = GetComponent<Animator>();
-        health = myStats.m_Constitution * 10;
-        damage = myStats.m_Strength + (myStats.m_Dexterity / 2);
+        health = GameManager.gmInstance.gameData.charCON * 10;
+        damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
     }
 
     // Update is called once per frame
