@@ -8,8 +8,9 @@ public class PlayerInteract : MonoBehaviour
     //Seting up NPC interaction
     private GameObject npcInteract;
     private bool isInteracting;
-    public GameObject npcText;
-    public GameObject npcText2;
+    public GameObject m_NpcInteractText;
+    public GameObject m_NpcOptionText1;
+    public GameObject m_NpcOptionText2;
     public GameObject npcDialog1;
     public GameObject npcDialog2;
     public GameObject npcDialog3;
@@ -33,35 +34,36 @@ public class PlayerInteract : MonoBehaviour
     {
         if (isInteracting)
         {
-            npcText.SetActive(true);
+            m_NpcInteractText.SetActive(true);
 
             if(Input.GetKeyDown(KeyCode.F) && score <= 6)
             {
-                npcText.SetActive(false);
+                m_NpcInteractText.SetActive(false);
                 npcDialog1.SetActive(true);
-                npcText2.SetActive(true);
+                m_NpcOptionText1.SetActive(true);
+                m_NpcOptionText2.SetActive(true);
             }
-            else if(Input.GetKeyDown(KeyCode.E) && score <= 6)
+            else if(Input.GetKeyDown(KeyCode.Alpha1))
             {
                 quest1.SetActive(true);
                 npcDialog1.SetActive(false);
                 npcDialog2.SetActive(true);
-
-                scoreText.text = score.ToString() + " Ducks Gathered";
             }
-            else if(Input.GetKeyDown(KeyCode.F) && score >= 6)
+            else if(Input.GetKeyDown(KeyCode.Alpha2))
             {
                 questMarker.SetActive(false);
                 npcDialog1.SetActive(false);
-                npcDialog2.SetActive(false);
                 npcDialog3.SetActive(true);
+
+                scoreText.text = score.ToString();
+                
                 questComplete.SetActive(false);
             }   
         }
         else
         {
-            npcText.SetActive(false);
-            npcText2.SetActive(false);
+            m_NpcInteractText.SetActive(false);
+            m_NpcOptionText1.SetActive(false);
             npcDialog1.SetActive(false);
             npcDialog2.SetActive(false);
             npcDialog3.SetActive(false);
