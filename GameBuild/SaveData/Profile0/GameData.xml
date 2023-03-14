@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<GameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <charID>0</charID>
+  <charName>jam</charName>
+  <charClass>0</charClass>
+  <charCON>17</charCON>
+  <charSTR>8</charSTR>
+  <charDEX>4</charDEX>
+  <charINT>6</charINT>
+  <charWIS>8</charWIS>
+</GameData>

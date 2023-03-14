@@ -13,6 +13,7 @@ public class UI : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         characterScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void Update()
@@ -22,10 +23,12 @@ public class UI : MonoBehaviour
             if (pauseScreen.activeSelf)
             {
                 pauseScreen.SetActive(false);
+                Time.timeScale = 1;
             }
             else
             {
                 pauseScreen.SetActive(true);
+                Time.timeScale = 0;
             }
         }
 
@@ -46,6 +49,7 @@ public class UI : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         characterScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void ReturnToMenu()

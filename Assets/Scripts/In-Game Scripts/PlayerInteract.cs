@@ -16,7 +16,8 @@ public class PlayerInteract : MonoBehaviour
     public GameObject npcDialog3;
     public GameObject quest1;
     public GameObject questComplete;
-    public GameObject questMarker;
+    public GameObject m_AvailableQuest;
+    public GameObject m_QuestLocator;
     
     //Setting up player score
     public TextMeshProUGUI scoreText;
@@ -27,6 +28,7 @@ public class PlayerInteract : MonoBehaviour
     {
         quest1.SetActive(false);
         questComplete.SetActive(false);
+        m_QuestLocator.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,18 +47,22 @@ public class PlayerInteract : MonoBehaviour
             }
             else if(Input.GetKeyDown(KeyCode.Alpha1))
             {
-                quest1.SetActive(true);
                 npcDialog1.SetActive(false);
                 npcDialog2.SetActive(true);
+
+                //Heal the player to full health
+                GetComponent<PlayerController>().health = 100;
             }
             else if(Input.GetKeyDown(KeyCode.Alpha2))
             {
-                questMarker.SetActive(false);
+                quest1.SetActive(true);
+                m_AvailableQuest.SetActive(false);
+                m_QuestLocator.SetActive(true);
                 npcDialog1.SetActive(false);
                 npcDialog3.SetActive(true);
 
                 scoreText.text = score.ToString();
-                
+
                 questComplete.SetActive(false);
             }   
         }
