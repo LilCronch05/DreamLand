@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class AreaLoad : MonoBehaviour
 {
     [SerializeField]
-    Transform entrance;
-    [SerializeField]
     Transform exit;
     [SerializeField]
     string areaName;
@@ -26,6 +24,8 @@ public class AreaLoad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("triggering");
+
         if (other.tag == "Player")
         {
             PlayerInfo.piInstance.spawnLocation = exit.position;
