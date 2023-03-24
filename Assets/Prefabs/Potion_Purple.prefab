@@ -1080,6 +1080,7 @@ GameObject:
   - component: {fileID: 991106306751160525}
   - component: {fileID: 1091841974689491529}
   - component: {fileID: 3836788966190781654}
+  - component: {fileID: 3075828106398930447}
   m_Layer: 0
   m_Name: Potion_Purple
   m_TagString: Untagged
@@ -1171,6 +1172,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3075828106398930447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810124306885108917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e626ff681731c489f05397792eb525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
 --- !u!1 &3810124307267878586
 GameObject:
   m_ObjectHideFlags: 0

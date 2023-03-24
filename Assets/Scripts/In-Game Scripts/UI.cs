@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pauseScreen, characterScreen;
+    private GameObject pauseScreen, characterScreen, inventoryScreen;
 
     private void Start()
     {
         pauseScreen.SetActive(false);
         characterScreen.SetActive(false);
+        inventoryScreen.SetActive(false);
         Time.timeScale = 1;
     }
 
@@ -43,12 +44,25 @@ public class UI : MonoBehaviour
                 characterScreen.SetActive(true);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inventoryScreen.activeSelf)
+            {
+                inventoryScreen.SetActive(false);
+            }
+            else
+            {
+                inventoryScreen.SetActive(true);
+            }
+        }
     }
 
     public void ContinueGame()
     {
         pauseScreen.SetActive(false);
         characterScreen.SetActive(false);
+        inventoryScreen.SetActive(false);
         Time.timeScale = 1;
     }
 
