@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.EventSystems;
+
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager instance;
+    [SerializeField]
+    private GameObject[] m_InventorySlots;
+
     public List<Item> items = new List<Item>();
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
-    public void AddItem(Item item)
+    public void MoveItem(Item item)
     {
-        items.Add(item);
+        // Move item to another inventory
+        // with drag and drop
+        if (item != null)
+        {
+            items.Add(item);
+            item.transform.SetParent(this.transform);
+            item.transform.position = this.transform.position;
+        }
+
+        
     }
 
     public void RemoveItem(Item item)

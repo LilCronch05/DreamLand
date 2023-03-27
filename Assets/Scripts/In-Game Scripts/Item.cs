@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
-public class Item : ScriptableObject
+public class Item : MonoBehaviour
 {
-    public int id;
-    public string itemName;
-    public int value;
-    public Sprite icon;
+    [SerializeField]
+    private int id;
+    [SerializeField]
+    private string itemName;
+    [SerializeField]
+    private TextMeshProUGUI label;
+
+    private void Start()
+    {
+        label.text = itemName;
+    }
 }
