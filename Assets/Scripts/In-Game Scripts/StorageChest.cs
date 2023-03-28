@@ -3,28 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using UnityEngine.EventSystems;
+
 public class StorageChest : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] m_InventorySlots;
+    private GameObject m_InventoryPanel;
     [SerializeField]
-    private GameObject m_Inventory;
-    [SerializeField]
-    private TextMeshProUGUI m_InteractText;
+    private GameObject m_InteractText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool m_IsInteracting;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (m_IsInteracting)
         {
-            m_InteractText.gameObject.SetActive(false);
-            m_Inventory.SetActive(true);
+            m_InteractText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                m_InventoryPanel.SetActive(true);
+                m_InteractText.SetActive(false);
+            }
+        }
+        else
+        {
+            m_InteractText.SetActive(false);
+            m_InventoryPanel.SetActive(false);
         }
     }
 
@@ -32,7 +36,7 @@ public class StorageChest : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            m_InteractText.gameObject.SetActive(true);
+            m_IsInteracting = true;
         }
     }
 
@@ -40,8 +44,7 @@ public class StorageChest : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            m_InteractText.gameObject.SetActive(false);
-            m_Inventory.SetActive(false);
+            m_IsInteracting = false;
         }
     }
 }
