@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject hintText;
     [SerializeField]
-    bool fade, fadeOn;
+    bool fade, fadeOn, collided;
 
     // Start is called before the first frame update
     void Start()
@@ -136,9 +136,11 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMovingRGT", false);
         }
         //Attacking
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && collided)
         {
+            Debug.Log("damaging");
             playerAnim.SetBool("isAttacking", true);
+            gameObject.GetComponent<EnemyAI>().health -= damage;
         }
         else
         {
@@ -167,9 +169,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && Input.GetMouseButtonDown(0))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyAI>().health -= damage;
+            collided = true;
+            Debug.Log("collided");           
         }
     }
 

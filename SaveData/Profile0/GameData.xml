@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <GameData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <charID>0</charID>
-  <charName>blake</charName>
+  <charName>james</charName>
   <charClass>0</charClass>
-  <charCON>10</charCON>
-  <charSTR>5</charSTR>
-  <charDEX>5</charDEX>
-  <charINT>20</charINT>
-  <charWIS>10</charWIS>
+  <charCON>8</charCON>
+  <charSTR>3</charSTR>
+  <charDEX>3</charDEX>
+  <charINT>15</charINT>
+  <charWIS>14</charWIS>
 </GameData>
