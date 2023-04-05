@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7a6269f221f2ddf42b459e09524ac1c9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 764b2c818b7dbec47b931079cfc9cce9, type: 2}
 --- !u!1001 &33390308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3768,14 +3768,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 20, z: -5.28}
+  m_LocalRotation: {x: 0.46193978, y: 0.33141357, z: -0.19134171, w: 0.8001032}
+  m_LocalPosition: {x: -3, y: 7.3, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8855052669356463211}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 45, z: 0}
 --- !u!224 &1069538300 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 942214711185142151, guid: b042d756a21d72040b985de430054e3e, type: 3}
@@ -10871,6 +10871,7 @@ GameObject:
   - component: {fileID: 9036980634098327860}
   - component: {fileID: 9036980634098327861}
   - component: {fileID: 9036980634098327862}
+  - component: {fileID: 9036980634098327864}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -10982,8 +10983,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8189980434217406161}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 28.37}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 44.95, y: 0, z: -44.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10996,7 +10997,7 @@ Transform:
   - {fileID: 2097081760}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &8958592390228267566
 Transform:
   m_ObjectHideFlags: 0
@@ -11146,6 +11147,28 @@ MonoBehaviour:
   m_IntelligenceText: {fileID: 1329688138}
   m_WisdomText: {fileID: 528875441}
   m_NameText: {fileID: 425941540}
+--- !u!195 &9036980634098327864
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189980434217406161}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9105106662420045508
 GameObject:
   m_ObjectHideFlags: 0

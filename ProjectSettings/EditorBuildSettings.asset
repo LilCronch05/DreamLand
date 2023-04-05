@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Field1.unity
-    guid: 6c90b8ab333917e4eb2cce7043a212b9
-  - enabled: 1
     path: Assets/Scenes/Player.unity
     guid: 8950e08c713582a4daec6e45759217ae
   - enabled: 1
-    path: Assets/Scenes/Field2.unity
+    path: Assets/Scenes/Field1.unity
+    guid: 6c90b8ab333917e4eb2cce7043a212b9
+  - enabled: 1
+    path: Assets/Scenes/BossRoom.unity
     guid: 6ba9b9111266cf545aaeabbd9a9cde25
   - enabled: 1
     path: Assets/Scenes/Inn1.unity
