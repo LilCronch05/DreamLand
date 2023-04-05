@@ -8,14 +8,15 @@ public class AreaManager : MonoBehaviour
 {
     [SerializeField]
     Transform spawn;
+    [SerializeField]
+    string areaName;
     PlayerController player;
     bool transition = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Player").transform.position = spawn.position;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(spawn.position);
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(spawn.position);
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.Fade(false);
@@ -26,7 +27,7 @@ public class AreaManager : MonoBehaviour
     {
         if (transition && !player.Fading())
         {
-            SceneManager.LoadScene("Field1", LoadSceneMode.Additive);
+            SceneManager.LoadScene(areaName, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(PlayerInfo.piInstance.currentScene);
         }
     }

@@ -7,25 +7,19 @@ using UnityEngine.AI;
 public class AreaLoad : MonoBehaviour
 {
     [SerializeField]
-    Transform exit;
-    [SerializeField]
-    string areaLoadName, areaName;
+    string areaName;
     bool transition = false;
     PlayerController player;
 
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (transition && !player.Fading())
-        {
-            SceneManager.LoadScene(areaLoadName, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(areaName);
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,12 +28,21 @@ public class AreaLoad : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            PlayerInfo.piInstance.spawnLocation = exit.position;
-            PlayerInfo.piInstance.currentScene = areaLoadName;
+            SceneManager.LoadSceneAsync(areaName, LoadSceneMode.Additive);
+
+            PlayerInfo.piInstance.currentScene = areaName;
 
             player = other.GetComponent<PlayerController>();
             player.Fade(true);
             transition = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            SceneManager.UnloadSceneAsync(areaName);
         }
     }
 }
