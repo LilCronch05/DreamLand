@@ -7,6 +7,8 @@ public class AreaManager : MonoBehaviour
 {
     [SerializeField]
     Transform spawn;
+    [SerializeField]
+    string areaName;
     PlayerController player;
     bool transition = false;
 
@@ -21,9 +23,11 @@ public class AreaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerController.Destination.transform.position = spawn.position;
+
         if (transition && !player.Fading())
         {
-            SceneManager.LoadScene("Field1", LoadSceneMode.Additive);
+            SceneManager.LoadScene(areaName, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(PlayerInfo.piInstance.currentScene);
         }
     }

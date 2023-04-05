@@ -2788,6 +2788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 1239277094}
+  areaLoadName: Field1
 --- !u!1 &988370606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4749637452329472091, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}

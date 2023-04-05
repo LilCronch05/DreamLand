@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Field1.unity
     guid: 6c90b8ab333917e4eb2cce7043a212b9
   - enabled: 1
+    path: Assets/Scenes/Field2.unity
+    guid: d0483a7eff756e0488a95b6ed4b43473
+  - enabled: 1
+    path: Assets/Scenes/Field3.unity
+    guid: fc11dd70bc6448a499dc8e7e99524a2f
+  - enabled: 1
+    path: Assets/Scenes/Field4.unity
+    guid: 64039b5ee8b38964f8f1349c9be7eb7c
+  - enabled: 1
     path: Assets/Scenes/BossRoom.unity
     guid: 6ba9b9111266cf545aaeabbd9a9cde25
   - enabled: 1

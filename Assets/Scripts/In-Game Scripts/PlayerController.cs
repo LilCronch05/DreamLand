@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public NavMeshAgent player;
     public Animator playerAnim;
     [SerializeField]
-    public GameObject Destination;
+    public static GameObject Destination;
     
     [SerializeField]
     Image fogPanel;
