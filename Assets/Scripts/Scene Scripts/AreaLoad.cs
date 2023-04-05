@@ -13,11 +13,14 @@ public class AreaLoad : MonoBehaviour
     bool transition = false;
     PlayerController player;
 
+    void Start()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+    }
+
     // Update is called once per frame
     private void Update()
     {
-        PlayerController.Destination.transform.position = exit.position;
-
         if (transition && !player.Fading())
         {
             SceneManager.LoadScene(areaLoadName, LoadSceneMode.Additive);
@@ -32,7 +35,7 @@ public class AreaLoad : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerInfo.piInstance.spawnLocation = exit.position;
-            PlayerInfo.piInstance.currentScene = areaName;
+            PlayerInfo.piInstance.currentScene = areaLoadName;
 
             player = other.GetComponent<PlayerController>();
             player.Fade(true);

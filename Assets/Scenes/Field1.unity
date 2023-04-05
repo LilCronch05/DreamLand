@@ -3355,7 +3355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh3502312
+  m_Name: pb_Mesh2006012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3522,7 +3522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535721717}
-  - component: {fileID: 535721720}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3547,20 +3546,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &535721720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535721716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db03e395cd0441341bb06e6951bf98a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 987018308}
-  areaName: Field1
 --- !u!1 &543050594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,7 +6537,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh3502536
+  m_Name: pb_Mesh2006234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16427,7 +16412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722425381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.96, y: 4.37, z: 1.785}
+  m_LocalPosition: {x: 1.96, y: 5.343, z: 1.785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

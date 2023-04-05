@@ -1324,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &273360750
 Light:
   m_ObjectHideFlags: 0
@@ -1776,7 +1776,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh11460444
+  m_Name: pb_Mesh59690
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7044,7 +7044,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 1375409972}
-  areaLoadName: Field1
 --- !u!1 &1428002907
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,7 +8693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh11460278
+  m_Name: pb_Mesh59524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

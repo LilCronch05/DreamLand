@@ -678,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &375586021
 Light:
   m_ObjectHideFlags: 0
@@ -811,12 +811,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 376645733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff684200f1eeb7d4c9d9f0a0cd676291, type: 3}
+  m_Script: {fileID: 11500000, guid: db03e395cd0441341bb06e6951bf98a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 1164035870}
-  areaLoadName: 
-  areaName: Field1
+  spawn: {fileID: 1164035870}
 --- !u!1001 &377875693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7421,7 +7419,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1813744454}
-  - component: {fileID: 1813744455}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -7446,20 +7443,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1813744455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813744450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db03e395cd0441341bb06e6951bf98a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 1164035870}
-  areaName: Field2
 --- !u!1001 &1840793761
 PrefabInstance:
   m_ObjectHideFlags: 0

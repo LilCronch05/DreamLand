@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class AreaManager : MonoBehaviour
 {
     [SerializeField]
     Transform spawn;
-    [SerializeField]
-    string areaName;
     PlayerController player;
     bool transition = false;
 
@@ -16,6 +15,8 @@ public class AreaManager : MonoBehaviour
     void Start()
     {
         GameObject.FindGameObjectWithTag("Player").transform.position = spawn.position;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(spawn.position);
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.Fade(false);
     }
@@ -23,11 +24,9 @@ public class AreaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerController.Destination.transform.position = spawn.position;
-
         if (transition && !player.Fading())
         {
-            SceneManager.LoadScene(areaName, LoadSceneMode.Additive);
+            SceneManager.LoadScene("Field1", LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(PlayerInfo.piInstance.currentScene);
         }
     }

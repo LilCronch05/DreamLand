@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
                     player.SetDestination(hit.point);
                     Destination.transform.position = hit.point;
                 }
-
-                Destination.SetActive(true);
             }
                     
         }
@@ -97,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
         //ANIMATIONS
         //Walking Forwards
-        if (player.velocity.x > 0)
+        if (player.velocity.x != 0)
         {
             playerAnim.SetBool("isMovingFWD", true);
         }
@@ -105,33 +103,33 @@ public class PlayerController : MonoBehaviour
         {
             playerAnim.SetBool("isMovingFWD", false);
         }
-        //Walking Backwards
-        if (player.velocity.x < 0)
-        {
-            playerAnim.SetBool("isMovingBWD", true);
-        }
-        else
-        {
-            playerAnim.SetBool("isMovingBWD", false);
-        }
-        //Strafing Left
-        if (player.velocity.z > 0)
-        {
-            playerAnim.SetBool("isMovingLFT", true);
-        }
-        else
-        {
-            playerAnim.SetBool("isMovingLFT", false);
-        }
-        //Strafing Right
-        if (player.velocity.z < 0)
-        {
-            playerAnim.SetBool("isMovingRGT", true);
-        }
-        else
-        {
-            playerAnim.SetBool("isMovingRGT", false);
-        }
+        // //Walking Backwards
+        // if (player.velocity.x < 0)
+        // {
+        //     playerAnim.SetBool("isMovingBWD", true);
+        // }
+        // else
+        // {
+        //     playerAnim.SetBool("isMovingBWD", false);
+        // }
+        // //Strafing Left
+        // if (player.velocity.z > 0)
+        // {
+        //     playerAnim.SetBool("isMovingLFT", true);
+        // }
+        // else
+        // {
+        //     playerAnim.SetBool("isMovingLFT", false);
+        // }
+        // //Strafing Right
+        // if (player.velocity.z < 0)
+        // {
+        //     playerAnim.SetBool("isMovingRGT", true);
+        // }
+        // else
+        // {
+        //     playerAnim.SetBool("isMovingRGT", false);
+        // }
         //Attacking
         if (Input.GetMouseButtonDown(0))
         {
