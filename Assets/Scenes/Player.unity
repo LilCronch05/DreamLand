@@ -3768,13 +3768,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.46193978, y: 0.33141357, z: -0.19134171, w: 0.8001032}
+  m_LocalRotation: {x: 0.46193978, y: 0.33141354, z: -0.1913417, w: 0.8001031}
   m_LocalPosition: {x: -3, y: 7.3, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8855052669356463211}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 60, y: 45, z: 0}
 --- !u!224 &1069538300 stripped
 RectTransform:
@@ -8015,7 +8015,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8855052669356463211}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!224 &2129781007 stripped
 RectTransform:
@@ -10865,13 +10865,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8855052669356463211}
   - component: {fileID: 9036980634098327857}
-  - component: {fileID: 9036980634098327858}
-  - component: {fileID: 9036980634098327863}
   - component: {fileID: 9036980634098327859}
   - component: {fileID: 9036980634098327860}
   - component: {fileID: 9036980634098327861}
   - component: {fileID: 9036980634098327862}
   - component: {fileID: 9036980634098327864}
+  - component: {fileID: 9036980634098327858}
+  - component: {fileID: 9036980634098327863}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -10984,7 +10984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8189980434217406161}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 44.95, y: 0, z: -44.93}
+  m_LocalPosition: {x: 21.6, y: 0, z: 2.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10993,8 +10993,8 @@ Transform:
   - {fileID: 4052450133141266413}
   - {fileID: 4651028322837264801}
   - {fileID: 4682473949616889855}
-  - {fileID: 963194228}
   - {fileID: 2097081760}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -11062,12 +11062,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 10
-  speed: 10
-  jumpForce: 10
-  hInput: 0
-  vInput: 0
-  jumpInput: 0
-  model: {fileID: 8189980434217406161}
+  cam: {fileID: 963194227}
+  player: {fileID: 9036980634098327864}
+  playerAnim: {fileID: 9036980634098327857}
+  Destination: {fileID: 6125440658459436155, guid: 1c6729deffa84a14c91918f3990834f4, type: 3}
   fogPanel: {fileID: 507281367}
   hintText: {fileID: 1663251489}
   fade: 0
@@ -11157,7 +11155,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

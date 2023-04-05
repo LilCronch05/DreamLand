@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject m_Detector;
     NavMeshAgent agent;
     public float health = 100.0f;
     public Transform player;

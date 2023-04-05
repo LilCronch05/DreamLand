@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
     public float health;
     public int damage;
-    public float speed = 10.0f;
-    public float jumpForce = 10.0f;
-    public float hInput, vInput, jumpInput;
-    Vector3 movementDirection;
-    Animator playerAnim;
-
+    public Camera cam;
+    public NavMeshAgent player;
+    public Animator playerAnim;
     [SerializeField]
-    public GameObject model;
+    public GameObject Destination;
+    
     [SerializeField]
     Image fogPanel;
     [SerializeField]
@@ -34,15 +33,35 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (collided)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                gameObject.GetComponent<EnemyAI>().health -= damage;
+                Debug.Log("Player attacked enemy");
+            }
+        }
+
         if (!fade)
         {
-            vInput = Input.GetAxis("Vertical");
-            hInput = Input.GetAxis("Horizontal");               
+            // The character moves where the mouse clicks
+            if (Input.GetMouseButtonDown(1))
+            {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    player.SetDestination(hit.point);
+                    Destination.transform.position = hit.point;
+                }
+
+                Destination.SetActive(true);
+            }
+                    
         }
         else
         {
-            vInput = 0;
-            hInput = 0;
             if (fadeOn && fogPanel.color.a < 1)
             {
                 //Debug.Log(fogPanel.color.a);
@@ -62,45 +81,23 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        transform.Translate(new Vector3(hInput * speed * Time.deltaTime, 0, vInput * speed * Time.deltaTime));
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = 2.0f;
-        }
-        else
-        {
-            speed = 1.0f;
-        }
-
-        //Make player jump
-        if (Input.GetButtonDown("Jump"))
-        {
-            transform.Translate(Vector3.up * jumpForce * Time.deltaTime, Space.World);
-            playerAnim.SetBool("isJumping", true);
-        }
-        else
-        {
-            playerAnim.SetBool("isJumping", false);
-        }
-
-        //Make character sprint
+        //Make character stop moving
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 20.0f;
-            playerAnim.SetBool("isSprinting", true);
-
+            player.speed = 0;
+            playerAnim.SetBool("isMovingFWD", false);
+            playerAnim.SetBool("isMovingBWD", false);
+            playerAnim.SetBool("isMovingLFT", false);
+            playerAnim.SetBool("isMovingRGT", false);
         }
         else
         {
-            speed = 10.0f;
-            playerAnim.SetBool("isSprinting", false);
+            player.speed = 5;
         }
 
         //ANIMATIONS
         //Walking Forwards
-        if (Input.GetKey(KeyCode.W))
+        if (player.velocity.x > 0)
         {
             playerAnim.SetBool("isMovingFWD", true);
         }
@@ -109,7 +106,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMovingFWD", false);
         }
         //Walking Backwards
-        if (Input.GetKey(KeyCode.S))
+        if (player.velocity.x < 0)
         {
             playerAnim.SetBool("isMovingBWD", true);
         }
@@ -118,7 +115,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMovingBWD", false);
         }
         //Strafing Left
-        if (Input.GetKey(KeyCode.A))
+        if (player.velocity.z > 0)
         {
             playerAnim.SetBool("isMovingLFT", true);
         }
@@ -127,7 +124,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMovingLFT", false);
         }
         //Strafing Right
-        if (Input.GetKey(KeyCode.D))
+        if (player.velocity.z < 0)
         {
             playerAnim.SetBool("isMovingRGT", true);
         }
@@ -136,11 +133,9 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMovingRGT", false);
         }
         //Attacking
-        if (Input.GetMouseButtonDown(0) && collided)
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("damaging");
-            playerAnim.SetBool("isAttacking", true);
-            gameObject.GetComponent<EnemyAI>().health -= damage;
+            playerAnim.SetBool("isAttacking", true);   
         }
         else
         {
@@ -157,22 +152,26 @@ public class PlayerController : MonoBehaviour
         {
             Camera.main.fieldOfView += 5;
         }
-        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 35, 60);
+        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 60, 90);
 
         //Camera Rotation
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse2))
         {
             float mouseX = Input.GetAxis("Mouse X");
             transform.Rotate(Vector3.up * mouseX * 2);
         }
+
+        // Camera follows player
+        cam.transform.position = new Vector3(transform.position.x + 3.0f, transform.position.y + 7.3f, transform.position.z - 3.0f);
+        cam.transform.LookAt(transform.position);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Hitbox"))
         {
             collided = true;
-            Debug.Log("collided");           
+            Debug.Log("collided");
         }
     }
 
