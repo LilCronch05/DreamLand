@@ -10,6 +10,8 @@ public class Follower : MonoBehaviour
     [SerializeField]
     Transform m_Target;
     [SerializeField]
+    GameObject m_Destination;
+    [SerializeField]
     TextMeshProUGUI m_InteractText;
     bool m_IsFollowing;
     bool m_IsInteracting;
@@ -42,6 +44,7 @@ public class Follower : MonoBehaviour
     {
         m_Target = GameObject.FindGameObjectWithTag("Player").transform;
         m_InteractText = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TextMeshProUGUI>();
+        m_Destination = GameObject.FindGameObjectWithTag("Destination");
 
         if (m_IsInteracting)
         {
@@ -70,6 +73,12 @@ public class Follower : MonoBehaviour
         if (other.tag == "Player")
         {
             m_IsInteracting = true;
+        }
+
+        if (other.tag == "Home")
+        {
+            m_IsFollowing = false;
+            m_Target = m_Destination.transform;
         }
     }
 }

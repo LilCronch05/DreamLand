@@ -16,8 +16,6 @@ public class AreaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(spawn.position);
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.Fade(false);
     }

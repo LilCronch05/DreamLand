@@ -12,7 +12,6 @@ public class AreaLoad : MonoBehaviour
 
     void Start()
     {
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
         player.Fade(false);
     }
 

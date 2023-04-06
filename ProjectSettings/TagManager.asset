@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Hitbox
   - InteractText
+  - Home
+  - Destination
   layers:
   - Default
   - TransparentFX

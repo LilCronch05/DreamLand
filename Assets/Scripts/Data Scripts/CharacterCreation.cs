@@ -156,7 +156,7 @@ public class CharacterCreation : MonoBehaviour
     public void StartGame()
     {
         DataManager.dmInstance.SaveData(ref GameManager.gmInstance.gameData, GameManager.gmInstance.gameData.charID);
-        SceneManager.LoadScene("Field1");
+        SceneManager.LoadScene("Player");
     }
 
     public void QuitGame()

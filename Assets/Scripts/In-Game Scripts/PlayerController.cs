@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         health = GameManager.gmInstance.gameData.charCON * 10;
         damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
+        fade = false;
     }
 
     // Update is called once per frame
