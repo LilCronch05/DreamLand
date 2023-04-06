@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7a6269f221f2ddf42b459e09524ac1c9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b9d49ace4fb948242a28bb90fd2c7449, type: 2}
 --- !u!1 &34899968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1682,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh59690
+  m_Name: pb_Mesh194540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6950,6 +6950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 1375409972}
+  areaName: 
 --- !u!1 &1428002907
 GameObject:
   m_ObjectHideFlags: 0
@@ -8599,7 +8600,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh59524
+  m_Name: pb_Mesh194374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

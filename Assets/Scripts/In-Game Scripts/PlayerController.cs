@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
         {
             Camera.main.fieldOfView += 5;
         }
-        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 60, 90);
+        Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 60, 75);
 
         //Camera Rotation
         if (Input.GetKey(KeyCode.Mouse2))

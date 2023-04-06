@@ -8,7 +8,6 @@ public class AreaLoad : MonoBehaviour
 {
     [SerializeField]
     string areaName;
-    bool transition = false;
     PlayerController player;
 
     void Start()
