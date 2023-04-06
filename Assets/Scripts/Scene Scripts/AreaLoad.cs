@@ -31,6 +31,7 @@ public class AreaLoad : MonoBehaviour
             SceneManager.LoadSceneAsync(areaName, LoadSceneMode.Additive);
 
             PlayerInfo.piInstance.currentScene = areaName;
+            Follower.fiInstance.currentScene = areaName;
 
             player = other.GetComponent<PlayerController>();
         }

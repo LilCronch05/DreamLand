@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 36
+    agentSlope: 50
     agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 346614919}
   m_Layer: 5
   m_Name: InteractText
-  m_TagString: Untagged
+  m_TagString: InteractText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2210,7 +2210,7 @@ GameObject:
   - component: {fileID: 535721717}
   - component: {fileID: 535721718}
   - component: {fileID: 535721719}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Field1Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2256,7 +2256,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 50, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &553823758
 PrefabInstance:
@@ -7242,7 +7242,7 @@ GameObject:
   - component: {fileID: 1798610684}
   - component: {fileID: 1798610683}
   - component: {fileID: 1798610682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Field3Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7260,7 +7260,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 50, z: 150}
   m_Center: {x: 0, y: 0, z: 100}
 --- !u!114 &1798610683
 MonoBehaviour:
@@ -7436,7 +7436,7 @@ GameObject:
   - component: {fileID: 1813744454}
   - component: {fileID: 1813744455}
   - component: {fileID: 1813744456}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Field2Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7482,7 +7482,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 50, z: 150}
   m_Center: {x: -100, y: 0, z: 0}
 --- !u!4 &1821628836 stripped
 Transform:
@@ -8387,7 +8387,7 @@ GameObject:
   - component: {fileID: 2073867844}
   - component: {fileID: 2073867843}
   - component: {fileID: 2073867842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Field4Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8405,7 +8405,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 1, z: 150}
+  m_Size: {x: 150, y: 50, z: 150}
   m_Center: {x: -100, y: 0, z: 100}
 --- !u!114 &2073867843
 MonoBehaviour:

@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Ground
   - Hitbox
+  - InteractText
   layers:
   - Default
   - TransparentFX

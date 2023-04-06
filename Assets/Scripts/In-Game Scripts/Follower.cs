@@ -14,10 +14,27 @@ public class Follower : MonoBehaviour
     bool m_IsFollowing;
     bool m_IsInteracting;
 
-    // Start is called before the first frame update
+    public static Follower fiInstance = null;
+    public string currentScene;
+
+    public Animator m_FollowerAnim;
+
+    private void Awake()
+    {
+        if (fiInstance == null)
+        {
+            fiInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (fiInstance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
-        
+        m_FollowerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,6 +60,8 @@ public class Follower : MonoBehaviour
         if (m_IsFollowing)
         {
             transform.position = Vector3.MoveTowards(transform.position, m_Target.position, 5 * Time.deltaTime);
+            m_InteractText.text = "";
+            m_FollowerAnim.Play("isWalking");
         }
     }
 
