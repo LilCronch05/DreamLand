@@ -14,6 +14,7 @@ public class AreaLoad : MonoBehaviour
     void Start()
     {
         //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+        player.Fade(false);
     }
 
     // Update is called once per frame
@@ -33,8 +34,6 @@ public class AreaLoad : MonoBehaviour
             PlayerInfo.piInstance.currentScene = areaName;
 
             player = other.GetComponent<PlayerController>();
-            player.Fade(true);
-            transition = true;
         }
     }
 
