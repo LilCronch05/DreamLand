@@ -2212,7 +2212,7 @@ GameObject:
   - component: {fileID: 535721719}
   m_Layer: 2
   m_Name: Field1Manager
-  m_TagString: Home
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6078,14 +6078,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359583547}
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: -57.5, y: 50.62, z: -71.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -57.5, y: 175, z: 48.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!224 &1364734341 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 942214711185142151, guid: b042d756a21d72040b985de430054e3e, type: 3}
@@ -7337,7 +7337,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 150, y: 50, z: 150}
-  m_Center: {x: 0, y: 0, z: 100}
+  m_Center: {x: -100, y: 0, z: 100}
 --- !u!114 &1798610683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8482,7 +8482,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 150, y: 50, z: 150}
-  m_Center: {x: -100, y: 0, z: 100}
+  m_Center: {x: 0, y: 0, z: 100}
 --- !u!114 &2073867843
 MonoBehaviour:
   m_ObjectHideFlags: 0

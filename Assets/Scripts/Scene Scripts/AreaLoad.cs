@@ -10,11 +10,6 @@ public class AreaLoad : MonoBehaviour
     string areaName;
     PlayerController player;
 
-    void Start()
-    {
-        player.Fade(false);
-    }
-
     // Update is called once per frame
     private void Update()
     {

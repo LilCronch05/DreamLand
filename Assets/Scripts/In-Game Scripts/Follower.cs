@@ -10,11 +10,12 @@ public class Follower : MonoBehaviour
     [SerializeField]
     Transform m_Target;
     [SerializeField]
-    GameObject m_Destination;
+    Transform m_Destination;
     [SerializeField]
     TextMeshProUGUI m_InteractText;
     bool m_IsFollowing;
     bool m_IsInteracting;
+    bool m_IsHome;
 
     public static Follower fiInstance = null;
     public string currentScene;
@@ -42,12 +43,11 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_Target = GameObject.FindGameObjectWithTag("Player").transform;
-        m_InteractText = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TextMeshProUGUI>();
-        m_Destination = GameObject.FindGameObjectWithTag("Destination");
-
         if (m_IsInteracting)
         {
+            m_Target = GameObject.FindGameObjectWithTag("Player").transform;
+            m_InteractText = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TextMeshProUGUI>();
+
             m_InteractText.text = "Press E to interact";
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -64,7 +64,16 @@ public class Follower : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, m_Target.position, 5 * Time.deltaTime);
             m_InteractText.text = "";
-            m_FollowerAnim.Play("isWalking");
+            m_FollowerAnim.Play("isMovingFWD");
+        }
+
+        if (m_IsHome)
+        {
+            m_Destination = GameObject.FindGameObjectWithTag("Destination").transform;
+            
+            m_IsFollowing = false;
+            m_IsInteracting = false;
+            transform.position = Vector3.MoveTowards(transform.position, m_Destination.position, 5 * Time.deltaTime);
         }
     }
 
@@ -72,13 +81,14 @@ public class Follower : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            
             m_IsInteracting = true;
         }
 
         if (other.tag == "Home")
         {
-            m_IsFollowing = false;
-            m_Target = m_Destination.transform;
+            
+            m_IsHome = true;
         }
     }
 }
