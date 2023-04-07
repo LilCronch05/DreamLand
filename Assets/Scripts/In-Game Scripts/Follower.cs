@@ -13,6 +13,7 @@ public class Follower : MonoBehaviour
     Transform m_Destination;
     [SerializeField]
     TextMeshProUGUI m_InteractText;
+    private NavMeshAgent m_Agent;
     bool m_IsFollowing;
     bool m_IsInteracting;
     bool m_IsHome;
@@ -37,6 +38,7 @@ public class Follower : MonoBehaviour
 
     void Start()
     {
+        m_Agent = GetComponent<NavMeshAgent>();
         m_FollowerAnim = GetComponent<Animator>();
     }
 
@@ -45,7 +47,6 @@ public class Follower : MonoBehaviour
     {
         if (m_IsInteracting)
         {
-            m_Target = GameObject.FindGameObjectWithTag("Player").transform;
             m_InteractText = GameObject.FindGameObjectWithTag("InteractText").GetComponent<TextMeshProUGUI>();
 
             m_InteractText.text = "Press E to interact";
@@ -55,25 +56,31 @@ public class Follower : MonoBehaviour
                 m_IsInteracting = false;
             }
         }
-        else
-        {
-            m_InteractText.text = "";
-        }
 
         if (m_IsFollowing)
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_Target.position, 5 * Time.deltaTime);
+            m_Target = GameObject.FindGameObjectWithTag("Player").transform;
+            
+            m_Agent.SetDestination(m_Target.position);
             m_InteractText.text = "";
-            m_FollowerAnim.Play("isMovingFWD");
         }
 
         if (m_IsHome)
         {
-            m_Destination = GameObject.FindGameObjectWithTag("Destination").transform;
-            
             m_IsFollowing = false;
             m_IsInteracting = false;
-            transform.position = Vector3.MoveTowards(transform.position, m_Destination.position, 5 * Time.deltaTime);
+
+            m_Destination = GameObject.FindGameObjectWithTag("Destination").transform;
+            m_Agent.SetDestination(m_Destination.position);
+        }
+
+        if (m_Agent.remainingDistance <= m_Agent.stoppingDistance)
+        {
+            m_FollowerAnim.SetBool("isMovingFWD", false);
+        }
+        else
+        {
+            m_FollowerAnim.SetBool("isMovingFWD", true);
         }
     }
 
