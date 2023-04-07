@@ -18,6 +18,8 @@ NOT WORKING:
 - The companion won't stop following you even when they reach the drop-off destination.
 
 QUALITY OF LIFE:
+- Hitting "Start Game" in the main menu will lead you straight to the last played file.
+	- "Load Game" lets you pick which file you want to play on (although only one is working).
 - You click to move (using right mouse button)
 	- You cannot hold the mouse button down to move. Only click.
 - You can change camera zoom with the scroll wheel.

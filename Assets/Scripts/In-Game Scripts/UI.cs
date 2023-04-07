@@ -68,7 +68,7 @@ public class UI : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

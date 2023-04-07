@@ -9488,9 +9488,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 63214556}
     m_Modifications:
+    - target: {fileID: 2090148976, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090148979, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1867583409694942348, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
       propertyPath: m_Name
       value: HealthPot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867583409694942348, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5820915595942573720, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
       propertyPath: m_Pivot.x
@@ -9575,6 +9587,10 @@ PrefabInstance:
     - target: {fileID: 5820915595942573720, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655012358272191571, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6655012358272191572, guid: 7d611995497d9954cb2a04bbc2076988, type: 3}
       propertyPath: m_AnchoredPosition.x

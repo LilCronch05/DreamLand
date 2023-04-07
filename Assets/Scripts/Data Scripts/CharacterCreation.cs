@@ -161,7 +161,7 @@ public class CharacterCreation : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     //Slider value changed
