@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_Detector;
+    private GameObject m_HitBox;
     NavMeshAgent agent;
     public float health = 100.0f;
     public Transform player;
@@ -20,7 +20,6 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         enemyAnim = GetComponent<Animator>();
-        
     }
     void Start()
     {
@@ -49,7 +48,7 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(player.position);
             enemyAnim.SetBool("isSprinting", true);
             //speed up the enemy
-            agent.speed = 5.0f;
+            agent.speed = 4.0f;
         }
 
         //once they have reached the player, they will attack
@@ -59,7 +58,7 @@ public class EnemyAI : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 2.0f)
             {
-                player.GetComponent<PlayerController>().health -= 10.0f;
+                player.GetComponent<PlayerController>().health -= 5.0f;
                 timer = 0.0f;
             }
         }

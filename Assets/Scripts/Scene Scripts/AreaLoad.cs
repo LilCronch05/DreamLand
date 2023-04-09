@@ -18,16 +18,19 @@ public class AreaLoad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggering");
-
         if (other.tag == "Player")
         {
             SceneManager.LoadSceneAsync(areaName, LoadSceneMode.Additive);
 
             PlayerInfo.piInstance.currentScene = areaName;
-            Follower.fiInstance.currentScene = areaName;
+            //Follower.fiInstance.currentScene = areaName;
 
             player = other.GetComponent<PlayerController>();
+        }
+
+        if (other.tag == "NPC")
+        {
+            Follower.fiInstance.currentScene = areaName;
         }
     }
 

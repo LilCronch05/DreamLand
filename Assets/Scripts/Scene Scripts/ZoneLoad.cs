@@ -30,8 +30,6 @@ public class ZoneLoad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggering");
-
         if (other.tag == "Player")
         {
             PlayerInfo.piInstance.spawnLocation = exit.position;

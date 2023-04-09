@@ -12,15 +12,14 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     public NavMeshAgent player;
     public Animator playerAnim;
-    [SerializeField]
-    public static GameObject Destination;
+    public GameObject enemy;
     
     [SerializeField]
     Image fogPanel;
     [SerializeField]
     GameObject hintText;
     [SerializeField]
-    bool fade, fadeOn, collided;
+    bool fade, fadeOn, colliding;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +33,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (collided)
+        if (colliding)
         {
+            // Find the enemy that the player is colliding with
+            enemy = GameObject.FindGameObjectWithTag("Enemy");
+
             if (Input.GetMouseButtonDown(0))
             {
-                gameObject.GetComponent<EnemyAI>().health -= damage;
+                enemy.GetComponent<EnemyAI>().health -= damage;
                 Debug.Log("Player attacked enemy");
             }
         }
@@ -54,7 +56,6 @@ public class PlayerController : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     player.SetDestination(hit.point);
-                    Destination.transform.position = hit.point;
                 }
             }
                     
@@ -104,33 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             playerAnim.SetBool("isMovingFWD", false);
         }
-        // //Walking Backwards
-        // if (player.velocity.x < 0)
-        // {
-        //     playerAnim.SetBool("isMovingBWD", true);
-        // }
-        // else
-        // {
-        //     playerAnim.SetBool("isMovingBWD", false);
-        // }
-        // //Strafing Left
-        // if (player.velocity.z > 0)
-        // {
-        //     playerAnim.SetBool("isMovingLFT", true);
-        // }
-        // else
-        // {
-        //     playerAnim.SetBool("isMovingLFT", false);
-        // }
-        // //Strafing Right
-        // if (player.velocity.z < 0)
-        // {
-        //     playerAnim.SetBool("isMovingRGT", true);
-        // }
-        // else
-        // {
-        //     playerAnim.SetBool("isMovingRGT", false);
-        // }
+
         //Attacking
         if (Input.GetMouseButtonDown(0))
         {
@@ -169,8 +144,17 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hitbox"))
         {
-            collided = true;
-            Debug.Log("collided");
+            colliding = true;
+            Debug.Log("colliding");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Hitbox"))
+        {
+            colliding = false;
+            Debug.Log("not colliding");
         }
     }
 
