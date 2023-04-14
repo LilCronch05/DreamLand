@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_HitBox;
+    [SerializeField]
+    private Image m_HealthBar;
     NavMeshAgent agent;
+    public float m_MaxHealth = 100.0f;
     public float health = 100.0f;
     public Transform player;
     public Transform[] waypoints;
@@ -30,6 +34,8 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
+        m_HealthBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(health / m_MaxHealth, 1, 1);
+
         if (agent.remainingDistance < 0.5f)
         {
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
@@ -37,11 +43,7 @@ public class EnemyAI : MonoBehaviour
             enemyAnim.SetBool("isMoving", true);
         }
 
-        if (health <= 0)
-        {
-            enemyAnim.SetBool("isDead", true);
-            Destroy(gameObject, 2.0f);
-        }
+        
 
         if (isInRange || health < 100)
         {
@@ -61,6 +63,15 @@ public class EnemyAI : MonoBehaviour
                 player.GetComponent<PlayerController>().health -= 5.0f;
                 timer = 0.0f;
             }
+        }
+    }
+
+    void Update()
+    {
+        if (health <= 0)
+        {
+            enemyAnim.SetBool("isDead", true);
+            Destroy(gameObject, 2.0f);
         }
     }
 

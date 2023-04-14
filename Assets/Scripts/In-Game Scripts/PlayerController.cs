@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    public float m_MaxHealth;
     public float health;
     public int damage;
     public Camera cam;
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnim;
     public GameObject enemy;
     
+    [SerializeField]
+    private Image m_HealthBar;
     [SerializeField]
     Image fogPanel;
     [SerializeField]
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {        
         playerAnim = GetComponent<Animator>();
+        m_MaxHealth = GameManager.gmInstance.gameData.charCON * 10;
         health = GameManager.gmInstance.gameData.charCON * 10;
         damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
         fade = false;
@@ -33,11 +37,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_HealthBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(health / m_MaxHealth, 1.5f, 1.5f);
+
         if (colliding)
         {
             // Find the enemy that the player is colliding with
-            enemy = GameObject.FindGameObjectWithTag("Enemy");
-
             if (Input.GetMouseButtonDown(0))
             {
                 enemy.GetComponent<EnemyAI>().health -= damage;
@@ -145,6 +149,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Hitbox"))
         {
             colliding = true;
+            enemy = other.gameObject.transform.parent.gameObject;
             Debug.Log("colliding");
         }
     }
