@@ -15,15 +15,19 @@ public class ZoneLoad : MonoBehaviour
 
     void Start()
     {
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+        exit = GameObject.FindGameObjectWithTag("Destination").transform;
     }
 
     // Update is called once per frame
     private void Update()
     {
+        
+
         if (transition && !player.Fading())
         {
-            SceneManager.LoadScene(areaLoadName, LoadSceneMode.Additive);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+
+            //SceneManager.LoadSceneAsync(areaLoadName, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(areaName);
         }
     }
@@ -32,6 +36,8 @@ public class ZoneLoad : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SceneManager.LoadSceneAsync(areaLoadName, LoadSceneMode.Additive);
+
             PlayerInfo.piInstance.spawnLocation = exit.position;
             PlayerInfo.piInstance.currentScene = areaLoadName;
 

@@ -186,7 +186,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81018
+  m_Name: pb_Mesh-16076
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -960,7 +960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.45
+      value: 112.5
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -968,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.425
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1062,7 +1062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81004
+  m_Name: pb_Mesh-16062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1862,7 +1862,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81032
+  m_Name: pb_Mesh-16090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2784,11 +2784,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 866436187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db03e395cd0441341bb06e6951bf98a1, type: 3}
+  m_Script: {fileID: 11500000, guid: ff684200f1eeb7d4c9d9f0a0cd676291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 1239277094}
-  areaName: 
+  exit: {fileID: 1239277094}
+  areaLoadName: Field1
+  areaName: Inn1
 --- !u!1 &988370606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4749637452329472091, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
@@ -4055,7 +4056,7 @@ GameObject:
   - component: {fileID: 1239277094}
   m_Layer: 0
   m_Name: Entrance
-  m_TagString: Untagged
+  m_TagString: Destination
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5644,7 +5645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729740564}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 72.67, y: 0.6773801, z: 0.84}
+  m_LocalPosition: {x: 113.72, y: 0.6773801, z: 0.8150001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6994,7 +6995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145890451872536228}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 76.31, y: 0.868, z: 0}
+  m_LocalPosition: {x: 117.36, y: 0.868, z: -0.024999857}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
