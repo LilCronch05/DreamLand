@@ -51,7 +51,7 @@ public class PlayerInteract : MonoBehaviour
                 npcDialog2.SetActive(true);
 
                 //Heal the player to full health
-                GetComponent<PlayerController>().health = 100;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().m_MaxHealth;
             }
             else if(Input.GetKeyDown(KeyCode.Alpha2))
             {

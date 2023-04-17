@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_HitBox;
+    private GameObject m_HitBox, Treasure;
     [SerializeField]
     private Image m_HealthBar;
     NavMeshAgent agent;
@@ -70,8 +70,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (health <= 0)
         {
+            //Treasure.SetActive(true);
             enemyAnim.SetBool("isDead", true);
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject);
         }
     }
 

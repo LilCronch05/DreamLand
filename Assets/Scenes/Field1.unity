@@ -7119,6 +7119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitBox: {fileID: 1140284925}
+  Treasure: {fileID: 0}
   m_HealthBar: {fileID: 1684110184}
   m_MaxHealth: 100
   health: 100
@@ -17855,6 +17856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitBox: {fileID: 99208162}
+  Treasure: {fileID: 0}
   m_HealthBar: {fileID: 1250259937}
   m_MaxHealth: 100
   health: 100
@@ -19673,8 +19675,8 @@ GameObject:
   - component: {fileID: 1997540488}
   - component: {fileID: 1997540487}
   - component: {fileID: 1997540486}
-  - component: {fileID: 1997540484}
   - component: {fileID: 1997540489}
+  - component: {fileID: 1997540484}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Enemy
@@ -19695,6 +19697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitBox: {fileID: 630517997}
+  Treasure: {fileID: 0}
   m_HealthBar: {fileID: 1819549587}
   m_MaxHealth: 100
   health: 100
@@ -22863,6 +22866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitBox: {fileID: 1267489796}
+  Treasure: {fileID: 0}
   m_HealthBar: {fileID: 211898611}
   m_MaxHealth: 100
   health: 100
