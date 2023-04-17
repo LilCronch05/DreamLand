@@ -2787,9 +2787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff684200f1eeb7d4c9d9f0a0cd676291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 1239277094}
+  exit: {fileID: 0}
   areaLoadName: Field1
   areaName: Inn1
+  Destination: InnExit
 --- !u!1 &988370606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4749637452329472091, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
@@ -4045,37 +4046,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9102357367506830098, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
   m_PrefabInstance: {fileID: 1237021380}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1239277093
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1239277094}
-  m_Layer: 0
-  m_Name: Entrance
-  m_TagString: Destination
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1239277094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239277093}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.407, z: 2.7299995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1729740565}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276623329
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,7 +5628,6 @@ Transform:
   - {fileID: 1929624943}
   - {fileID: 1154038494}
   - {fileID: 866436189}
-  - {fileID: 1239277094}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}

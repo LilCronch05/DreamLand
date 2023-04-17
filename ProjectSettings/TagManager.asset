@@ -11,6 +11,10 @@ TagManager:
   - InteractText
   - Home
   - Destination
+  - InnSpawn
+  - BossRoomSpawn
+  - InnExit
+  - BossRoomExit
   layers:
   - Default
   - TransparentFX

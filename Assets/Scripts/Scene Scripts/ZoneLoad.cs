@@ -9,26 +9,24 @@ public class ZoneLoad : MonoBehaviour
     [SerializeField]
     Transform exit;
     [SerializeField]
-    string areaLoadName, areaName;
+    string areaLoadName, areaName, Destination;
     bool transition = false;
     PlayerController player;
 
     void Start()
     {
-        exit = GameObject.FindGameObjectWithTag("Destination").transform;
+        
     }
 
     // Update is called once per frame
     private void Update()
     {
-        
-
         if (transition && !player.Fading())
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
-
-            //SceneManager.LoadSceneAsync(areaLoadName, LoadSceneMode.Additive);
+            SceneManager.LoadScene(areaLoadName, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(areaName);
+
+            GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
         }
     }
 
@@ -36,7 +34,7 @@ public class ZoneLoad : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(areaLoadName, LoadSceneMode.Additive);
+            exit = GameObject.FindGameObjectWithTag(Destination).transform;
 
             PlayerInfo.piInstance.spawnLocation = exit.position;
             PlayerInfo.piInstance.currentScene = areaLoadName;
