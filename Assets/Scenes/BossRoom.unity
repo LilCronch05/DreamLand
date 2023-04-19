@@ -2498,7 +2498,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh248110
+  m_Name: pb_Mesh210290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9465,10 +9465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff684200f1eeb7d4c9d9f0a0cd676291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exit: {fileID: 0}
-  areaLoadName: Field1
+  m_Destination: {fileID: 0}
+  areaLoadName: 
   areaName: BossRoom
-  Destination: BossRoomExit
+  m_DestinationName: BossRoomExit
 --- !u!1 &1428002907
 GameObject:
   m_ObjectHideFlags: 0
@@ -11659,7 +11659,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh247928
+  m_Name: pb_Mesh210108
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12672,7 +12672,7 @@ GameObject:
   - component: {fileID: 2013157888}
   m_Layer: 2
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

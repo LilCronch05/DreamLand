@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class ZoneLoad : MonoBehaviour
 {
     [SerializeField]
-    Transform exit;
+    Transform m_Destination;
     [SerializeField]
-    string areaLoadName, areaName, Destination;
+    string areaLoadName, areaName, m_DestinationName;
     bool transition = false;
     PlayerController player;
 
@@ -26,7 +26,7 @@ public class ZoneLoad : MonoBehaviour
             SceneManager.LoadScene(areaLoadName, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync(areaName);
 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(exit.position);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>().Warp(m_Destination.position);
         }
     }
 
@@ -34,9 +34,9 @@ public class ZoneLoad : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            exit = GameObject.FindGameObjectWithTag(Destination).transform;
+            m_Destination = GameObject.FindGameObjectWithTag(m_DestinationName).transform;
 
-            PlayerInfo.piInstance.spawnLocation = exit.position;
+            PlayerInfo.piInstance.spawnLocation = m_Destination.position;
             PlayerInfo.piInstance.currentScene = areaLoadName;
 
             player = other.GetComponent<PlayerController>();
