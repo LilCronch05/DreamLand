@@ -1,7 +1,0 @@
-Use "I" to open inventory
-Use "P" to open character profile
-Use "Esc" to open menu
-
-When near the storage chest in the inn use "F" to open the chest.
-
-Currently, the items will not properly move into another slot. but they are present and able to be moved.
