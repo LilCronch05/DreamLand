@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     GameObject hintText;
     [SerializeField]
     bool fade, fadeOn, colliding;
+    [SerializeField]
+    AudioSource levelUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
         level = GameManager.gmInstance.gameData.charLevel;
         m_MaxHealth = GameManager.gmInstance.gameData.charCON * 10;
         health = GameManager.gmInstance.gameData.charCON * 10;
-        m_MaxExperience = 100;
+        m_MaxExperience = 99;
         experience = 0;
         damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
         fade = false;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if(experience >= m_MaxExperience)
         {
+            levelUpSound.Play();
             level++;
             experience = 0;
 
