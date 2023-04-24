@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         m_MaxHealth = GameManager.gmInstance.gameData.charCON * 10;
         health = GameManager.gmInstance.gameData.charCON * 10;
         m_MaxExperience = 100;
-        experience = GameManager.gmInstance.gameData.charEXP;
+        experience = 0;
         damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
         fade = false;
     }
@@ -43,19 +43,23 @@ public class PlayerController : MonoBehaviour
         m_HealthBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(health / m_MaxHealth, 1.5f, 1.5f);
         m_ExperienceBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(experience / m_MaxExperience, 1.5f, 1.5f);
 
-        if(experience >= 100)
+        if(experience >= m_MaxExperience)
         {
             level++;
             experience = 0;
 
             //Increase stats
-            GameManager.gmInstance.gameData.charLevel += 1;
-            GameManager.gmInstance.gameData.charCON += 10;
-            GameManager.gmInstance.gameData.charSTR += 5;
-            GameManager.gmInstance.gameData.charDEX += 5;
-            GameManager.gmInstance.gameData.charINT += 5;
-            GameManager.gmInstance.gameData.charWIS += 5;
+            m_MaxExperience += 100;
+            GetComponent<StatManager>().IncreaseStat("Level");
+            GetComponent<StatManager>().IncreaseStat("CON");
+            GetComponent<StatManager>().IncreaseStat("STR");
+            GetComponent<StatManager>().IncreaseStat("DEX");
+            GetComponent<StatManager>().IncreaseStat("INT");
+            GetComponent<StatManager>().IncreaseStat("WIS");
         }
+        //Update personal stats
+        damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
+        m_MaxHealth = GameManager.gmInstance.gameData.charCON * 10;
 
         if (colliding)
         {
