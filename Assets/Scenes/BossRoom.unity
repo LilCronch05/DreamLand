@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &28535732 stripped
@@ -236,7 +240,7 @@ GameObject:
   - component: {fileID: 34899969}
   - component: {fileID: 34899971}
   - component: {fileID: 34899970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head01_Male
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 37897773}
   - component: {fileID: 37897774}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cloak03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 66009622}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: clavicle_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85046556}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: calf_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150836005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lowerarm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,6 +1065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &160099753 stripped
@@ -1162,6 +1170,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -1265,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &177539204 stripped
@@ -1281,7 +1297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 186962025}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: foot_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,6 +1330,18 @@ PrefabInstance:
     - target: {fileID: 500108743393630688, guid: c439fc0e92e894841a7916b5abae57ff, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 500108743393630688, guid: c439fc0e92e894841a7916b5abae57ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403317257134326457, guid: c439fc0e92e894841a7916b5abae57ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969284080847118201, guid: c439fc0e92e894841a7916b5abae57ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7770220585646880807, guid: c439fc0e92e894841a7916b5abae57ff, type: 3}
       propertyPath: m_Pivot.x
@@ -1413,7 +1441,7 @@ GameObject:
   - component: {fileID: 189338847}
   - component: {fileID: 189338846}
   - component: {fileID: 189338845}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,8 +1528,8 @@ RectTransform:
   - {fileID: 1583441639}
   - {fileID: 1011484748}
   - {fileID: 674978059}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1531893310}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1547,9 +1575,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1531893310}
     m_Modifications:
+    - target: {fileID: 546989835241541369, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4749637452329472091, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
       propertyPath: m_Name
       value: AvailableQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749637452329472091, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8313146400429631405, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
       propertyPath: m_RootOrder
@@ -1595,6 +1631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904873827100995299, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60a0f3ebe7e504549a3fd8c1c8d2059d, type: 3}
 --- !u!1 &200372092 stripped
@@ -1616,7 +1656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217984236}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CloakBone02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,7 +1958,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287480880
 GameObject:
@@ -1929,7 +1969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287480881}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2046,6 +2086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &299832971 stripped
@@ -2064,7 +2108,7 @@ GameObject:
   - component: {fileID: 309321393}
   - component: {fileID: 309321395}
   - component: {fileID: 309321394}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2191,7 @@ GameObject:
   - component: {fileID: 316367920}
   - component: {fileID: 316367922}
   - component: {fileID: 316367921}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: NPC Dialog 2 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2256,7 +2300,7 @@ GameObject:
   - component: {fileID: 338146944}
   - component: {fileID: 338146946}
   - component: {fileID: 338146945}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head02_Female
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2338,6 +2382,10 @@ PrefabInstance:
     - target: {fileID: 3832907126045494399, guid: 3617e4093ca8d5145986d37c89cfd692, type: 3}
       propertyPath: m_Name
       value: OHS06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832907126045494399, guid: 3617e4093ca8d5145986d37c89cfd692, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4502165957148481221, guid: 3617e4093ca8d5145986d37c89cfd692, type: 3}
       propertyPath: m_RootOrder
@@ -2484,6 +2532,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -2815,6 +2867,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &390776306 stripped
@@ -2931,7 +2987,7 @@ GameObject:
   - component: {fileID: 441871004}
   - component: {fileID: 441871006}
   - component: {fileID: 441871005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3354,7 +3410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509466472}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3471,6 +3527,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -3747,7 +3807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 529929212}
   - component: {fileID: 529929213}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3972,7 +4032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535475577}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: upperarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4090,6 +4150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &537904808 stripped
@@ -4106,7 +4170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 568043186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4142,7 +4206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585531045}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4259,6 +4323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &591444503 stripped
@@ -4275,7 +4343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 598247929}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_03_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4351,6 +4419,10 @@ PrefabInstance:
     - target: {fileID: 6597358353836066591, guid: ac86f8ddca59acb4184d3eb42067bafa, type: 3}
       propertyPath: m_Name
       value: Shield05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597358353836066591, guid: ac86f8ddca59acb4184d3eb42067bafa, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac86f8ddca59acb4184d3eb42067bafa, type: 3}
@@ -4435,7 +4507,7 @@ GameObject:
   - component: {fileID: 674978062}
   - component: {fileID: 674978061}
   - component: {fileID: 674978060}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: StorageInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4559,7 +4631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 675503256}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thigh_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4591,7 +4663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 688869992}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4656,7 +4728,7 @@ GameObject:
   - component: {fileID: 733753609}
   - component: {fileID: 733753611}
   - component: {fileID: 733753610}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: NPC Dialog 3 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,6 +4889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &739489017 stripped
@@ -4951,6 +5027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &762446105 stripped
@@ -5052,6 +5132,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -5155,6 +5239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &795858182 stripped
@@ -5203,7 +5291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817019768}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5269,7 +5357,7 @@ GameObject:
   - component: {fileID: 837100284}
   - component: {fileID: 837100286}
   - component: {fileID: 837100285}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Interact Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5465,7 +5553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889049176}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5506,7 +5594,7 @@ GameObject:
   - component: {fileID: 903496704}
   - component: {fileID: 903496706}
   - component: {fileID: 903496705}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5725,6 +5813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &931531433 stripped
@@ -5826,6 +5918,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -5929,6 +6025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &977539936 stripped
@@ -6031,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &990959966 stripped
@@ -6047,7 +6151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010215977}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: neck_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6081,7 +6185,7 @@ GameObject:
   - component: {fileID: 1011484748}
   - component: {fileID: 1011484750}
   - component: {fileID: 1011484749}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Quest Complete Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6345,7 +6449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076144892}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_02_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6855,7 +6959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132892565}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6919,7 +7023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164082556}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6981,7 +7085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1172755530}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7110,7 +7214,7 @@ GameObject:
   - component: {fileID: 1204412746}
   - component: {fileID: 1204412748}
   - component: {fileID: 1204412747}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hair01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7193,7 +7297,7 @@ GameObject:
   - component: {fileID: 1205369957}
   - component: {fileID: 1205369959}
   - component: {fileID: 1205369958}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7328,7 +7432,7 @@ GameObject:
   - component: {fileID: 1208414936}
   - component: {fileID: 1208414938}
   - component: {fileID: 1208414937}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eye01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7409,7 +7513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210573932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: shoulderPadJoint_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7536,7 +7640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253207308}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ball_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7652,6 +7756,10 @@ PrefabInstance:
     - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
       propertyPath: m_Name
       value: StorageSlot (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
@@ -7948,6 +8056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1288121710 stripped
@@ -7965,7 +8077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289354350}
   - component: {fileID: 1289354351}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8211,6 +8323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1329146033 stripped
@@ -8436,7 +8552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372229859}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8468,7 +8584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1397204793}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_01_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8598,7 +8714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1417367695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: calf_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9451,7 +9567,7 @@ Transform:
   m_Children:
   - {fileID: 1122400504}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1427901788
 MonoBehaviour:
@@ -9478,7 +9594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1428002908}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9629,6 +9745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1442645220 stripped
@@ -9645,7 +9765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445463204}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BackpackBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9677,7 +9797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457203788}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CloakBone01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9795,6 +9915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1475089357 stripped
@@ -9843,7 +9967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488648539}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: shoulderPadJoint_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9906,7 +10030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1528696590}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9938,7 +10062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529459545}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: weapon_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9972,10 +10096,9 @@ GameObject:
   - component: {fileID: 1531893310}
   - component: {fileID: 1531893309}
   - component: {fileID: 1531893308}
-  - component: {fileID: 1531893307}
   - component: {fileID: 1531893306}
   - component: {fileID: 1531893305}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Adventurer
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -10008,22 +10131,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4374073, y: 0.5052232, z: 0.24965788}
   m_Center: {x: 0.0049196635, y: 0.2473884, z: 0.036453735}
---- !u!54 &1531893307
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531893304}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!95 &1531893308
 Animator:
   serializedVersion: 4
@@ -10086,8 +10193,9 @@ Transform:
   - {fileID: 37897773}
   - {fileID: 688869992}
   - {fileID: 200372093}
+  - {fileID: 189338848}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1544917227
 GameObject:
@@ -10100,7 +10208,7 @@ GameObject:
   - component: {fileID: 1544917228}
   - component: {fileID: 1544917230}
   - component: {fileID: 1544917229}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Interact Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10233,7 +10341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1548394354}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: foot_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10296,7 +10404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1559377057}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: clavicle_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10361,7 +10469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579332671}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10481,6 +10589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1580299295 stripped
@@ -10497,7 +10609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582067731}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thumb_02_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10531,7 +10643,7 @@ GameObject:
   - component: {fileID: 1583441639}
   - component: {fileID: 1583441641}
   - component: {fileID: 1583441640}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Quest Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10664,7 +10776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602587477}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: weapon_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10720,7 +10832,7 @@ Transform:
   - {fileID: 1279848472}
   - {fileID: 396281971}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1664441661
 MonoBehaviour:
@@ -10959,6 +11071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1697219643 stripped
@@ -11061,6 +11177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1703289009 stripped
@@ -11153,7 +11273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718491507}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: thigh_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11187,7 +11307,7 @@ GameObject:
   - component: {fileID: 1735392768}
   - component: {fileID: 1735392770}
   - component: {fileID: 1735392769}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Backpack01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11302,7 +11422,7 @@ GameObject:
   - component: {fileID: 1754277683}
   - component: {fileID: 1754277685}
   - component: {fileID: 1754277684}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11826,7 +11946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1818062887}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: lowerarm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11889,7 +12009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835766707}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: upperarm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11923,7 +12043,7 @@ GameObject:
   - component: {fileID: 1851935917}
   - component: {fileID: 1851935919}
   - component: {fileID: 1851935918}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hair06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12006,7 +12126,7 @@ GameObject:
   - component: {fileID: 1861497730}
   - component: {fileID: 1861497732}
   - component: {fileID: 1861497731}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eye02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12173,6 +12293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1862277926 stripped
@@ -12209,7 +12333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897984522
 PrefabInstance:
@@ -12306,6 +12430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &1897984523 stripped
@@ -12322,7 +12450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900062370}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ball_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12415,7 +12543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1930553365}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CloakBone03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12510,7 +12638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1975479746}
   - component: {fileID: 1975479747}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cloak02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12714,7 +12842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2023219208}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: index_01_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12748,7 +12876,7 @@ GameObject:
   - component: {fileID: 2073782514}
   - component: {fileID: 2073782516}
   - component: {fileID: 2073782515}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Interact Option 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12883,7 +13011,7 @@ GameObject:
   - component: {fileID: 2087297912}
   - component: {fileID: 2087297914}
   - component: {fileID: 2087297913}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: NPC Dialog Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13046,6 +13174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageSlot (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 9102357367506830101, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2e64b98a11afa488efd58d932da512, type: 3}
 --- !u!224 &2094208434 stripped
@@ -13062,7 +13194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103386744}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: hand_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13184,7 +13316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8175135539059608919, guid: 39b55ecccf55a19499fa42b6a755806c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13278,4 +13410,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InventoryPanel: {fileID: 0}
-  m_InteractText: {fileID: 1544917227}
+  m_InteractText: {fileID: 0}
