@@ -7,8 +7,8 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float m_MaxHealth;
-    public float health;
+    public float m_MaxHealth, health, m_MaxExperience, experience;
+    public int level;
     public int damage;
     public Camera cam;
     public NavMeshAgent player;
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject enemy;
     
     [SerializeField]
-    private Image m_HealthBar;
+    private Image m_HealthBar, m_ExperienceBar;
     [SerializeField]
     Image fogPanel;
     [SerializeField]
@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {        
         playerAnim = GetComponent<Animator>();
+        level = GameManager.gmInstance.gameData.charLevel;
         m_MaxHealth = GameManager.gmInstance.gameData.charCON * 10;
         health = GameManager.gmInstance.gameData.charCON * 10;
+        m_MaxExperience = 100;
+        experience = GameManager.gmInstance.gameData.charEXP;
         damage = GameManager.gmInstance.gameData.charSTR + (GameManager.gmInstance.gameData.charDEX / 2);
         fade = false;
     }
@@ -38,6 +41,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         m_HealthBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(health / m_MaxHealth, 1.5f, 1.5f);
+        m_ExperienceBar.gameObject.GetComponent<RectTransform>().localScale = new Vector3(experience / m_MaxExperience, 1.5f, 1.5f);
+
+        if(experience >= 100)
+        {
+            level++;
+            experience = 0;
+
+            //Increase stats
+            GameManager.gmInstance.gameData.charLevel += 1;
+            GameManager.gmInstance.gameData.charCON += 10;
+            GameManager.gmInstance.gameData.charSTR += 5;
+            GameManager.gmInstance.gameData.charDEX += 5;
+            GameManager.gmInstance.gameData.charINT += 5;
+            GameManager.gmInstance.gameData.charWIS += 5;
+        }
 
         if (colliding)
         {

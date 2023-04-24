@@ -10,6 +10,8 @@ public class GameData
     public int charID;
     public string charName;
     public int charClass;
+    public int charLevel;
+    public float charEXP;
     public int charCON;
     public int charSTR;
     public int charDEX;
@@ -21,6 +23,8 @@ public class GameData
         charID = 0;
         charName = "Empty";
         charClass = 0;
+        charLevel = 0;
+        charEXP = 0;
         charCON = 0;
         charSTR = 0;
         charDEX = 0;

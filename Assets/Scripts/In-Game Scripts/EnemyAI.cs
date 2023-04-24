@@ -71,6 +71,7 @@ public class EnemyAI : MonoBehaviour
         if (health <= 0)
         {
             //Treasure.SetActive(true);
+            GameManager.gmInstance.gameData.charEXP += 20;
             enemyAnim.SetBool("isDead", true);
             Destroy(gameObject);
         }

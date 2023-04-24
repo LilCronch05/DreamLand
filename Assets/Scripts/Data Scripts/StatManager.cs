@@ -11,10 +11,11 @@ public class StatManager : MonoBehaviour
     //  Any of the stats set in the menu will be used to set the stats of the character.
 
     [SerializeField]
-    private TextMeshProUGUI m_ConstitutionText, m_StrengthText, m_DexterityText, m_IntelligenceText, m_WisdomText, m_NameText;
+    private TextMeshProUGUI m_LevelText, m_ConstitutionText, m_StrengthText, m_DexterityText, m_IntelligenceText, m_WisdomText, m_NameText;
 
     private void Start()
     {
+        m_LevelText.text = "Level: " + GameManager.gmInstance.gameData.charLevel.ToString();
         m_ConstitutionText.text = "CON: " + GameManager.gmInstance.gameData.charCON.ToString();
         m_StrengthText.text = "STR: " + GameManager.gmInstance.gameData.charSTR.ToString();
         m_DexterityText.text = "DEX: " + GameManager.gmInstance.gameData.charDEX.ToString();
